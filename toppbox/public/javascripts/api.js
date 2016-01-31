@@ -15,8 +15,7 @@ function getData(){
   })
  })
 }
-
-getData().then(function(response){
+module.exports = getData().then(function(response){
   var titles = []
   var amounts = []
   var boxOffice = {}
@@ -41,7 +40,6 @@ getData().then(function(response){
   boxOffice.amounts = amounts;
   boxOffice.titles = titles;
 
-  console.log(boxOffice);
-
+  return boxOffice;
 
 })
