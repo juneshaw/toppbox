@@ -1,5 +1,37 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  link(rel='stylesheet', href='../stylesheets/sign-in.css')
+
+  div.holder
+
+    div.shadow
+    div.banner
+      div.logo-holder
+        img.logo(src="images/Logo.png", alt="Logo")
+    div.left
+      h1.sign-in SIGN IN
+      form(action="/" method="POST")
+        label.left-label(for="Email") EMAIL ADDRESS / USERNAME:
+        input.breaker.text-edit(type="text" name="Email" id="Email")
+        label.left-label(for="Password") PASSWORD:
+        input.breaker.text-edit(type="text" name="Password" id="Password")
+        input.sign-in-button(type="submit" value="SIGN IN")      
+      img.facebook(src="images/facebook.png", alt="Logo")
+
+      
+    div.right
+      div#borderLeft
+      h1.sign-up NOT A MEMBER? SIGN UP!
+      h2.info Get into the game! Registration is fast and free!
+      input.sign-up-button(type="submit" value="REGISTER NOW")
+      
+    img.about(src="images/Fuck.png", alt="Logo")
+    div.about-div
+      img.about-watch(src="images/Watch.png", alt="Logo")
+      img.about-compete(src="images/compete.png", alt="Logo")
+      img.about-picks(src="images/Picks.png", alt="Logo")
+      
+
+      
+    
