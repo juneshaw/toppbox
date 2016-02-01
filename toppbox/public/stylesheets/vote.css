@@ -4,29 +4,24 @@ html, body{
   background-color: #000
 }
 
-#userPick{
+.userPick{
   background-color: #23332B;
   width: 100vw;
   height: 60vh;
   padding-top: 50px;
 }
 
-#userPickImg{
-  border: dashed 2px white;
-  height: 200px;
-  margin: 10px auto;
-  width: 200px;
-  display: block;
+button{
+  
 }
-
-#allPicks{
+.allPicks{
   display: inline;
   width: 100vw;
   margin: 10px auto;
 
 }
 
-#movieImgs{
+.movieImgs{
   width: 200px;
   height: 200px;
   display: inline-block;

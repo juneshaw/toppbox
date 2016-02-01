@@ -2,22 +2,20 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/vote.css')
-  script(src='../js/vote.js')
+  script(src='../javascripts/vote.js')
   script(src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.5.4/dragula.min.js")
   script(src="https://code.jquery.com/jquery-2.1.4.min.js")
-  script(src="https://code.jquery.com/ui/1.11.4/jquery-ui.js")
 
-
-
-  div#userPick
-    div#userPickImg
+  
+  div.userPick
+  
     //- once we have api hooked up we can change this to a loop to render the images on the page 
-  div#allPicks
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
-    img#movieImgs(src='http://placehold.it/200x200')
+  div.allPicks
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')
+    img.movieImgs(src='http://placehold.it/200x200')

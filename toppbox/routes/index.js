@@ -12,4 +12,8 @@ router.get('/vote', function(req, res, next) {
   res.render('vote', { title: 'Voting Page' });
 });
 
+router.post('/', function(req, res, next){
+  console.log(req.body);
+})
+
 module.exports = router;
