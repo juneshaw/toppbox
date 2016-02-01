@@ -1,0 +1,135 @@
+body{
+  color: #23332b;
+  background: rgba(226,226,226,1);
+background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 34%, rgba(209,209,209,1) 63%, rgba(254,254,254,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(226,226,226,1)), color-stop(34%, rgba(219,219,219,1)), color-stop(63%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 34%, rgba(209,209,209,1) 63%, rgba(254,254,254,1) 100%);
+background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 34%, rgba(209,209,209,1) 63%, rgba(254,254,254,1) 100%);
+background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 34%, rgba(209,209,209,1) 63%, rgba(254,254,254,1) 100%);
+background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 34%, rgba(209,209,209,1) 63%, rgba(254,254,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+}
+
+/*banner*/
+  .jura{
+    font-family: 'Jura', sans-serif;
+  }
+  .banner{
+    position: absolute;
+    top: 0%;
+    width: 80%;
+    height: 14%;
+    left: 10%;
+    background-color: black;
+  }
+  .logo-holder{
+    position: relative;
+    height: 100%;
+    margin: auto auto;
+  }
+  .logo{
+    position: relative;
+    margin-top: 1.5%;
+  }
+/*form*/
+    .sign-in{
+      position: relative;
+      left: 5%;
+
+    }
+    .left{
+      position: absolute;
+      top: 14%;
+      left: 10%;
+      width: 40%;
+      height: 81%;
+      background-color: #e9c291;
+      border-right: 2px solid black;
+    }
+    .facebook{
+      position: absolute;
+      left: 5%;
+      top: 63.5%;
+    }
+
+    .shadow{
+      position: absolute;
+      top: 0%;
+      left: 10%;
+      width: 80%;
+      height: 95%;
+      box-shadow: 2px 2px 14px black;
+    }
+    .left-label{
+      position: relative;
+      left: 5%;
+    }
+    .text-edit{
+      position: relative;
+      width: 90%;
+      left: 5%;
+      margin-bottom: 32px;
+      font-size: 32px;
+    }
+    .sign-in-button{
+      position: absolute;
+      left: 5%;
+      width: 30%;
+      border: 0px;
+      color: white;
+      background-color: #ed4600;
+      font-size: 16pt;
+      border-radius: 10px;
+    }
+    .breaker{
+      display: block;
+    }
+
+    .right{
+      position: absolute;
+      top: 14%;
+      left: 50%;
+      width: 40%;
+      height: 81%;
+      background-color: #e9c291;
+    }
+    /*#borderLeft {
+      border-left: 2px solid black;
+      position: absolute;
+      bottom: 20%;
+      top: 15%;
+    }*/
+    .sign-up-button{
+      position: absolute;
+      left: 5%;
+      width: 43%;
+      border: 0px;
+      color: white;
+      background-color: #ed4600;
+      font-size: 24pt;
+      border-radius: 10px;
+    }
+    #about{
+      position: relative;
+      left: 43%;
+      width: 14%;
+      margin-top: 37%;
+      z-index: 13;
+    }
+    .about:hover{
+      cursor: pointer;
+    }
+    .sign-up{
+      position: relative;;
+      left: 5%;
+    }
+    .info{
+      position: relative;
+      left: 5%;
+    }
+    .about-div{
+      position: absolute;
+      left: 10%;
+      width: 80%;
+      top: 100%;
+    }
