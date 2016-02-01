@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var topfive = require('../public/javascripts/api')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

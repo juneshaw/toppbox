@@ -6,8 +6,12 @@ var drake=dragula([document.querySelector(".allPicks"), document.querySelector("
 
 
 $('#button').click(function(){
-  
-  document.getElementById("the-form").value = "form values";
+  var first = $("#userPick:nth-of-type(1)").html()
+  var second = $("#userPick:nth-of-type(2)").html()
+
+  console.log(first);
+  console.log(second);
+  document.getElementById("the-form").value = first;
 })
 
 
