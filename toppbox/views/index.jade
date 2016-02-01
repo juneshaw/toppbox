@@ -1,5 +1,5 @@
 extends layout
-
+| <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 block content
   link(rel='stylesheet', href='../stylesheets/sign-in.css')
 
@@ -11,7 +11,7 @@ block content
     div.left
       h1.sign-in.jura SIGN IN
       form(action="/" method="POST")
-        label.left-label.jura(for="Email") EMAIL ADDRESS / USERNAME:
+        label.left-label.jura(for="Email") EMAIL ADDRESS:
         input.breaker.text-edit.jura(type="text" name="Email" id="Email")
         label.left-label.jura(for="Password") PASSWORD:
         input.breaker.text-edit(type="text" name="Password" id="Password")
@@ -36,6 +36,15 @@ block content
   script(type='text/javascript').      
     if (window.location.hash && window.location.hash == '#_=_') {
       window.location.hash = '';
+    }
+    $(".about").click(scrollDown);
+    function scrollDown(){
+      $(document).ready(function(){
+        $('html, body').animate({
+        scrollTop: $(".about-div").offset().top - 400,
+        scrollLeft: $(".shadow").offset().left
+        }, 2000);
+      })
     }
 
       

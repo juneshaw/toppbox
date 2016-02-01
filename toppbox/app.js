@@ -47,7 +47,8 @@ passport.use(new FacebookStrategy({
   function(token, refreshToken, profile, done) {
     console.log("Auth done");
     done(null, profile);
-    console.log(profile);
+    console.log(profile['_json']['email']);
+    console.log(profile['photos'][0]["value"]);
   }));
 
 passport.serializeUser(function(user, done) {
