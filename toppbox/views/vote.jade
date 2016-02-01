@@ -5,17 +5,21 @@ block content
   script(src='../javascripts/vote.js')
   script(src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.5.4/dragula.min.js")
   script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+  form.picks(action='/' method="post")
+   
+    div#userPick
+  button(type="submit" id="button") Submit
 
-  
-  div.userPick
-  
-    //- once we have api hooked up we can change this to a loop to render the images on the page 
-  div.allPicks
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
-    img.movieImgs(src='http://placehold.it/200x200')
+      //- once we have api hooked up we can change this to a loop to render the images on the page 
+    div.allPicks
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+      img.movieImgs(src='http://placehold.it/200x200' value ="something")
+   
+   form
+     input#the-form(type="text" value="" hidden)

@@ -1,10 +1,14 @@
+var contents;
 $(document).ready(function() {
 
-var drake=dragula([document.querySelector(".allPicks"), document.querySelector(".userPick")]);
+var drake=dragula([document.querySelector(".allPicks"), document.querySelector("#userPick")]);
 
-// $('#submitPics').click(function(){
-//   var contents = $('.userPick').html();
-//   console.log(contents);
-// })
+
+
+$('#button').click(function(){
+  
+  document.getElementById("the-form").value = "form values";
+})
+
 
 });

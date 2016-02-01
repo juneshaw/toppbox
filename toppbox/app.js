@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var dragula = require('dragula');
 
-var $ = require('jquery');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
