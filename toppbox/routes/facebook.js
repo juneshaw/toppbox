@@ -1,13 +1,18 @@
     var express = require('express');
     var router = express.Router();
     var passport = require('passport');
+    var LocalStorage;
 
-    router.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email'}));
+    router.get('/auth/facebook', passport.authenticate('facebook', {successRedirect: '/auth/home', scope : 'email'}));
 
-    router.get('/auth/facebook/', function(req, res){
+    router.get('/auth/home/', function(req, res){
       //req.query.option would equal 'my-cool-option'
-      console.log("\n ****************" + req.query.code + "**************\n");
-      res.render("approved");
+
+      if (typeof localStorage === "undefined" || localStorage === null) {
+        LocalStorage = require('node-localstorage').LocalStorage;
+        localStorage = new LocalStorage('./scratch');
+      }
+      res.render("logged-in/index");
     })
 
     // handle the callback after facebook has authenticated the user
