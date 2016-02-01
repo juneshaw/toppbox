@@ -4,9 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy
+var User = require('./public/javascripts/user');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var facebook = require('./routes/facebook');
 
 var app = express();
 
@@ -23,8 +28,38 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use( express.static( "public" ) );
 
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/', facebook);
+
+
+passport.use(new FacebookStrategy({
+    clientID: "1643675802563018",
+    clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
+    callbackURL: "http://localhost:3000/auth/facebook/",
+    enableProof: true,
+    profileFields: ['id', 'photos', 'emails']
+  },
+  function(token, refreshToken, profile, done) {
+    console.log("Auth done");
+    done(null, profile);
+    console.log(profile);
+  }));
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+// used to deserialize the user
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

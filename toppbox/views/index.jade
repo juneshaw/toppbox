@@ -4,7 +4,6 @@ block content
   link(rel='stylesheet', href='../stylesheets/sign-in.css')
 
   div.holder
-
     div.shadow
     div.banner
       div.logo-holder
@@ -17,7 +16,9 @@ block content
         label.left-label.jura(for="Password") PASSWORD:
         input.breaker.text-edit(type="text" name="Password" id="Password")
         input.sign-in-button.jura(type="submit" value="SIGN IN")      
-      img.facebook(src="images/facebook.png", alt="Logo")
+      a(href="/auth/facebook" class="btn btn-primary")
+        img.facebook(src="images/facebook.png", alt="Logo")
+
 
       
     div.right
@@ -26,12 +27,16 @@ block content
       h2.jura.info Get into the game! Registration is fast and free!
       input.sign-up-button.jura(type="submit" value="create account")
       
-    img.about(src="images/fuck.png", alt="Logo")
+    img.about(src="images/Fuck.png", alt="Logo")
     div.about-div
       img.about-watch(src="images/Watch.png", alt="Logo")
       img.about-compete(src="images/compete.png", alt="Logo")
       img.about-picks(src="images/Picks.png", alt="Logo")
       
+  script(type='text/javascript').      
+    if (window.location.hash && window.location.hash == '#_=_') {
+      window.location.hash = '';
+    }
 
       
     
