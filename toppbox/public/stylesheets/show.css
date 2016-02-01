@@ -1,0 +1,55 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+}
+
+.left{
+  width:40vw;
+  background-color: #FFF;
+  display: inline-block;
+  height: 90vh;
+  float: left;
+  text-align: center;
+}
+
+.right{
+  width: 60vw;
+  float: left;
+  background-color: #FFF;
+  display: inline-block;
+  height: 90vh;
+  text-align: center;
+
+}
+
+.info{
+  border: solid black 2px;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.metrics{
+  border: solid black 2px;
+  padding: 20px;
+  margin: 20px auto;
+  height: 400px;
+  width: 500px;
+  text-align: left;
+}
+
+.metricsLeft{
+ float: left;
+ width: 49%;
+ height: 100%;
+ background-color: red;
+}
+
+.metricsRight{
+  float: left;
+  background-color: pink;
+  height: 100%;
+  width: 49%;
+}

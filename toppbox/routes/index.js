@@ -16,4 +16,8 @@ router.post('/', function(req, res, next){
   console.log(req.body);
 })
 
+router.get('/show', function(req, res, next) {
+  res.render('show', { title: 'Show Page' });
+});
+
 module.exports = router;
