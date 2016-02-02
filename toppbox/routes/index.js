@@ -52,4 +52,7 @@ router.get('/show', function(req, res, next) {
 
 
 
+
+=======
+>>>>>>> 6db2b48b86707ad5f3cfce4eb8c76f9012def600
 module.exports = router;

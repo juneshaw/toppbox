@@ -56,7 +56,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
       /*top: 0%;*/
       left: 10%;
       width: 80%;
-      height: 95%;
+      height: 81%;
       box-shadow: 2px 2px 14px black;
     }
     .left-label{
@@ -116,7 +116,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
       position: relative;
       left: 43%;
       width: 14%;
-      margin-top: 37%;
+      margin-top: 30%;
       z-index: 13;
     }
     .about:hover{
@@ -137,6 +137,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
       top: 100%;
     }
 
+    .bottom-abouts{
+      position: relative;
+      width: 33%;
+    } 
     /* Modal register css */
 
   .modalDialog {
