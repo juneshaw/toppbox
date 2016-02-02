@@ -4,6 +4,11 @@ body{
   width: 100vw;
 }
 
+.logo-holder{
+  background-color: black;
+  padding-top: 10px;
+  height: 12vh;
+}
 .left{
   width:40vw;
   background-color: #FFF;
@@ -33,11 +38,12 @@ body{
 
 .metrics{
   border: solid black 2px;
-  padding: 20px;
   margin: 20px auto;
   height: 400px;
   width: 500px;
   text-align: left;
+  background-color: #23332B;
+  padding: 10px
 }
 
 .metricsLeft{
@@ -50,4 +56,7 @@ body{
   float: left;
   height: 100%;
   width: 49%;
+}
+iframe{
+  margin: 15px;
 }
