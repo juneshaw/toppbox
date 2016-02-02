@@ -48,14 +48,8 @@ router.post('/vote', function(req, res, next){
   res.redirect('/')
 })
 
-<<<<<<< HEAD
 router.get('/show', function(req, res, next) {
   res.render('show', { title: 'Show Page' });
 });
 
-router.get('/approved', function(req, res, next) {
-  res.render('profile');
-});
-=======
->>>>>>> jessMaster
 module.exports = router;
