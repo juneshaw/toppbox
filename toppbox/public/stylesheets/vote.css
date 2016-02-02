@@ -19,12 +19,13 @@ html, body{
 
 }
 
-.movieImgs{
-  width: 200px;
+#movie_img{
+  width: 140px;
   height: 200px;
   display: inline-block;
   margin: 10px auto;
   padding: 40px;
+  border-radius: 50px;
 }
 
 
