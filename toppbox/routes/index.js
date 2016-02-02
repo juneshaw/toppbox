@@ -20,4 +20,8 @@ router.get('/show', function(req, res, next) {
   res.render('show', { title: 'Show Page' });
 });
 
+=======
+router.get('/approved', function(req, res, next) {
+  res.render('profile');
+});
 module.exports = router;
