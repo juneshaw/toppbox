@@ -18,15 +18,16 @@ router.get('/vote', function(req, res, next) {
   getupcoming.then(function(data){
     data['results'].forEach(function(movie){
       movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
-
     });
-    console.log(movies);
+
     res.render('vote', {movies: movies})
   })
 });
 
 router.post('/vote', function(req, res, next){
-  console.log(format.formatPicks(req.body));
+  var errors = []
+  var picks = format.formatPicks(req.body);
+  res.redirect('/')
 })
 
 module.exports = router;
