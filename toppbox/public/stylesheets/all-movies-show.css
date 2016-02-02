@@ -1,0 +1,61 @@
+body{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#23332b+50,5b616a+100 */
+background: #23332b; /* Old browsers */
+background: -moz-linear-gradient(left,  #23332b 50%, #5b616a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #23332b 50%,#5b616a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #23332b 50%,#5b616a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23332b', endColorstr='#5b616a',GradientType=1 ); /* IE6-9 */
+	
+
+}
+
+.containing-container{
+	position: absolute;
+	top: 12%;
+	left: 0%;
+}
+
+.nav-bar{
+	position: fixed;
+	display: block;
+	height: 10%;
+	width: 100%;
+	background-color: black;
+	top: 0%;
+	left: 0%;
+	z-index: 5;
+}
+.profile-img{
+	position: absolute;
+	top: 10%;
+	left: 1%;
+	height: 80%;
+	width: auto;
+}
+.profile-name{
+	position: absolute;
+	left: 6.2%;
+	color: #ED4600;
+	line-height: 100%;
+}
+
+
+.movie-container{
+	position: relative;
+	top: 15%;
+	text-align:center;
+	left: 0%;
+	width: 100%;
+}
+.middle-poster{
+	position: relative;
+	display: inline-block;
+	margin: 15px 15px;
+}
+
+#example{
+	position: relative;
+	top: 100%;
+	left: 0%;
+}
+

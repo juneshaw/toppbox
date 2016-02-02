@@ -136,3 +136,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
       width: 80%;
       top: 100%;
     }
+
+    .bottom-abouts{
+      position: relative;
+      width: 33%;
+    } 
