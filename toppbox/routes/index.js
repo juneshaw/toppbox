@@ -3,7 +3,7 @@ var router = express.Router();
 var topfive = require('../public/javascripts/topfive')
 var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
-
+var format = require('../public/javascripts/helpers')
 
 
 
@@ -25,8 +25,8 @@ router.get('/vote', function(req, res, next) {
   })
 });
 
-router.post('/', function(req, res, next){
-  console.log(req.body);
+router.post('/vote', function(req, res, next){
+  console.log(format.formatPicks(req.body));
 })
 
 module.exports = router;
