@@ -2,19 +2,25 @@ var express = require('express');
 var router = express.Router();
 var topfive = require('../public/javascripts/topfive')
 var unirest = require('unirest')
-/* GET home page. */
+var getupcoming = require('../public/javascripts/getupcoming')
+
+
+
+
 router.get('/', function(req, res, next) {
-  unirest.post('http://www.boxofficemojo.com/schedule/').end(function(result){
-    res.send(result.body)
+      res.render('index')
   })
 
 
 
-  // res.render('index', { title: 'Express' });
-});
-
 router.get('/vote', function(req, res, next) {
-  res.render('vote', { title: 'Voting Page' });
+  var image = []
+  getupcoming.then(function(data){
+    data['results'].forEach(function(movie){
+      image.push('https://image.tmdb.org/t/p/w185'+movie.poster_path);
+    });
+    res.render('vote', {images: image})
+  })
 });
 
 router.post('/', function(req, res, next){

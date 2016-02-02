@@ -13,7 +13,7 @@ topfive.then(function(result){
   })
   formatTitles.forEach(function(item){
   unirest.post('http://www.omdbapi.com/?t='+item+'&y=&plot=short&r=json').end(function(result){
-    // console.log(result.body.Title);
+    console.log(result.body);
   });
  })
 })
