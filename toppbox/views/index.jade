@@ -22,7 +22,11 @@ block content
       div#borderLeft
       h1.sign-up.jura NOT A MEMBER? SIGN UP!
       h2.jura.info Get into the game! Registration is fast and free!
-      input.sign-up-button.jura(type="submit" value="create account")
+      a.sign-up-button.jura(href="#openModal") create account. 
+      div#openModal.modalDialog
+        div
+          a.close(href="#close" title="Close")
+          p create account
 
     img.about(src="images/Fuck.png", alt="Logo")
     div.about-div
