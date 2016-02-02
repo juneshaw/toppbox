@@ -12,13 +12,10 @@ html, body{
   overflow: hidden;
 }
 
-<<<<<<< HEAD
-button{
 
-}
-=======
 
->>>>>>> jessMaster
+
+
 .allPicks{
   display: inline;
   width: 100vw;
@@ -26,14 +23,14 @@ button{
 
 }
 
-<<<<<<< HEAD
+
 .movieImgs{
   width: 150px;
   height: 150px;
   display: inline-block;
   margin: 10px auto;
-  padding: 35px;
-=======
+}
+
 #movie_img{
   width: 140px;
   height: 200px;
@@ -54,7 +51,7 @@ button{
 }
 #submit:hover{
   color: grey;
->>>>>>> jessMaster
+
 }
 
 /*draggula stuff*/

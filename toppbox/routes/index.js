@@ -32,10 +32,7 @@ router.get('/show/:id', function(req, res, next) {
   //     movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
   //   });
   // res.render('show', {movies:movie});
-  res.render('show');
 })
-// })
-
 
 router.get('/approved', function(req, res, next) {
   res.render('profile');
@@ -48,14 +45,11 @@ router.post('/vote', function(req, res, next){
   res.redirect('/')
 })
 
-<<<<<<< HEAD
+
 router.get('/show', function(req, res, next) {
   res.render('show', { title: 'Show Page' });
 });
 
-router.get('/approved', function(req, res, next) {
-  res.render('profile');
-});
-=======
->>>>>>> jessMaster
+
+
 module.exports = router;
