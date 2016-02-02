@@ -43,7 +43,8 @@ body{
   width: 500px;
   text-align: left;
   background-color: #23332B;
-  padding: 10px
+  padding: 20px;
+  padding-top: 40px;
 }
 
 .metricsLeft{

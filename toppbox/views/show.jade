@@ -1,16 +1,12 @@
 extends layout
 
 block content
-  head 
-    div.logo-holder
-      img.logo(src="images/Logo.png", alt="Logo")
   link(rel='stylesheet', href='/stylesheets/show.css')
-  if movie
-    div.left
-      h1.title= movie.title
-      img.movieImgs(src='http://placehold.it/200x200')
-      p % Picked This
-      p.info info
+  div.left
+    h1.title Movie Title
+    img.movieImgs(src='http://placehold.it/200x200')
+    p % Picked This
+    p.info info
 
   div.right
     h1 Metrics
