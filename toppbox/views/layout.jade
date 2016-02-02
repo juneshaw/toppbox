@@ -5,5 +5,18 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='https://fonts.googleapis.com/css?family=Jura:400,500' rel='stylesheet' type='text/css')
     script(src='https://code.jquery.com/jquery-2.2.0.min.js' type="text/javascript")
+    script(src='javascripts/animations.js' type="text/javascript")
   body
+    header
+      div.top
+        div.logoHeader
+          img(src="../images/DrawingBg.png")
+        nav.navBar
+          div.navLeft
+            a(href="/") Home
+            a(href="/votes") Vote
+            a(href="/users/#{toppboxemail}") My Profile
+          div.navRight
+            a(href="/profile") Welcome #{currentuser}!
+            a(href="/logout") Logout
     block content
