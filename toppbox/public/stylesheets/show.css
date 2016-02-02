@@ -1,0 +1,63 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+}
+
+.logo-holder{
+  background-color: black;
+  padding-top: 10px;
+  height: 12vh;
+}
+.left{
+  width:40vw;
+  background-color: #5B616A;
+  display: inline-block;
+  height: 100vh;
+  float: left;
+  text-align: center;
+}
+
+.right{
+  width: 60vw;
+  float: left;
+  background-color: #5B616A;
+  display: inline-block;
+  height: 100vh;
+  text-align: center;
+
+}
+
+.info{
+  border: solid black 2px;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.metrics{
+  border: solid black 2px;
+  margin: 20px auto;
+  height: 400px;
+  width: 500px;
+  text-align: left;
+  background-color: #23332B;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+.metricsLeft{
+ float: left;
+ width: 49%;
+ height: 100%;
+}
+
+.metricsRight{
+  float: left;
+  height: 100%;
+  width: 49%;
+}
+iframe{
+  margin: 15px;
+}

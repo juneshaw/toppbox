@@ -1,0 +1,18 @@
+.form_container{
+  height: 90%;
+  width: 80%;
+}
+
+.register{
+  line-height: 35px;
+}
+
+.register_input{
+  width: 375px;
+   display: block;
+   border: 1px solid #999;
+   height: 25px;
+   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
