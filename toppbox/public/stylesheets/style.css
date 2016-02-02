@@ -1,8 +1,86 @@
-body {
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}*/
+/*colors:
+  black #23332B
+  red #ED4600
+  taupe #E9C291
+  yellow #FFE800
+  grey #5B616A
+*/
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 1.0;
+}
+
+.top {
+  width: 100%;
+  height: 75px;
+  background-color: #5B616A;
+  color: white;
+}
+
+.logoHeader {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.logoHeader img {
+  width: 100%;
+  height: 100%;
+}
+
+.navBar {
+  position: relative;
+  transition: opacity 4s;
+  display: inline-block;
+  width: 70%;
+  height: 35%;
+  padding-top: 50px;
+  padding-left: 10px;
+}
+
+.navLeft {
+  display: inline-block;
+  width: 65%;
+  height: 10px;
+  text-align: left;
+}
+
+.navRight {
+  display: inline-block;
+  width: 32%;
+  height: 10px;
+  text-align: right;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 50px;
+  opacity: 0.6;
+  color: white;
 }

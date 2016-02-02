@@ -38,7 +38,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     }
     .left{
       position: absolute;
-      top: 14%;
+      /*top: 14%;*/
       left: 10%;
       width: 40%;
       height: 81%;
@@ -53,7 +53,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 
     .shadow{
       position: absolute;
-      top: 0%;
+      /*top: 0%;*/
       left: 10%;
       width: 80%;
       height: 95%;
@@ -87,7 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 
     .right{
       position: absolute;
-      top: 14%;
+      /*top: 14%;*/
       left: 50%;
       width: 40%;
       height: 81%;
