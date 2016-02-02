@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/vote.css')
+  script(src='../javascripts/vote.js')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.5.4/dragula.min.js")
+  script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+  div#userPick
+   
+    
+  div#submit Submit Picks! 
+
+      //- once we have api hooked up we can change this to a loop to render the images on the page 
+    div.allPicks
+      if movies
+        for movie in movies
+          img(src= movie.image class= '*#'+movie.title+'$' id="movie_img")
+   
+   form#someForm(action="/vote" method="POST")
+     input(type="hidden" name="user_picks" id="useDataField")

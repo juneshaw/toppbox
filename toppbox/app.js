@@ -9,6 +9,10 @@ var FacebookStrategy = require('passport-facebook').Strategy
 var User = require('./public/javascripts/user');
 
 
+
+
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var facebook = require('./routes/facebook');
