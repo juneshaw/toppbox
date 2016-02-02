@@ -14,12 +14,14 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/vote', function(req, res, next) {
-  var image = []
+  var movies= []
   getupcoming.then(function(data){
     data['results'].forEach(function(movie){
-      image.push('https://image.tmdb.org/t/p/w185'+movie.poster_path);
+      movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+
     });
-    res.render('vote', {images: image})
+    console.log(movies);
+    res.render('vote', {movies: movies})
   })
 });
 
