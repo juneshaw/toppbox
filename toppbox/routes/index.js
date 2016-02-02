@@ -31,6 +31,7 @@ router.get('/approved', function(req, res, next) {
 router.post('/vote', function(req, res, next){
   var errors = []
   var picks = format.formatPicks(req.body);
+  console.log(picks);
   res.redirect('/')
 })
 
