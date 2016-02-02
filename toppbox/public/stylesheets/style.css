@@ -1,11 +1,11 @@
-body {
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
-}
+}*/
 /*colors:
   black #23332B
   red #ED4600
@@ -13,24 +13,9 @@ a {
   yellow #FFE800
   grey #5B616A
 */
-/*@font-face {
-    font-family: abel;
-    font-size: 5px;
-    src: url(http://www.1001freefonts.com/abel.font);
-}
-
-@font-face {
-    font-family: nexa;
-    src: url(http://www.fontfabric.com/nexa-free-font/);
-}*/
-
-/** {
-  font-family: abel;
-  font-size: 15px;
-  color: #5B616A;
-}*/
 
 body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -50,10 +35,6 @@ a {
 a:hover {
   opacity: 1.0;
 }
-/*
-a:focus{
-    background-color: yellow;
-}*/
 
 .top {
   width: 100%;
@@ -102,26 +83,4 @@ nav a {
   margin-right: 50px;
   opacity: 0.6;
   color: white;
-}
-
-.grid {
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: wrap;
-  height: 75vh;
-}
-
-.box {
-  display: flex;
-  flex-direction: row;
-  /*flex: 1 0 auto;*/
-  width: 45%;
-  height: 50%;
-  padding: 20px;
-  margin: 5px;
-  border: solid 2px black;
-}
-
-.box img {
-  object-fit: scale-down;
 }

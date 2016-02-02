@@ -1,0 +1,22 @@
+
+.grid {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  height: 75vh;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  /*flex: 1 0 auto;*/
+  width: 45%;
+  height: 50%;
+  padding: 20px;
+  margin: 5px;
+  border: solid 2px black;
+}
+
+.box img {
+  object-fit: scale-down;
+}
