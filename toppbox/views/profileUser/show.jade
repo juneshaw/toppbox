@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  script(src='../../../public/javascripts/populateMovies.js')
+
+  script.
+    function populate() {
+      var results = populateMovies();
+      console.log('results = ', results);
+    }
+
+  div.grid
+    div.box
+      img(src="../#{userPhoto}")
+    div.box
+      ol
+        li #{moviePick1}
+        li #{moviePick2}
+        li #{moviePick3}
+        li #{moviePick4}
+        li #{moviePick5}
+    div.box
+    div.box
