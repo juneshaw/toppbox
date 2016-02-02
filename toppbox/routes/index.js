@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+
 router.get('/vote', function(req, res, next) {
   res.render('vote', { title: 'Voting Page' });
 });
@@ -20,4 +21,7 @@ router.get('/show', function(req, res, next) {
   res.render('show', { title: 'Show Page' });
 });
 
+router.get('/approved', function(req, res, next) {
+  res.render('profile');
+});
 module.exports = router;

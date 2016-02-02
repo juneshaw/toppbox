@@ -12,7 +12,7 @@ html, body{
 }
 
 button{
-  
+
 }
 .allPicks{
   display: inline;
@@ -22,11 +22,11 @@ button{
 }
 
 .movieImgs{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   display: inline-block;
   margin: 10px auto;
-  padding: 40px;
+  padding: 35px;
 }
 
 

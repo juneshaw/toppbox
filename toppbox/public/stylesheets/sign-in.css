@@ -35,7 +35,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     .sign-in{
       position: relative;
       left: 5%;
-
     }
     .left{
       position: absolute;
@@ -80,6 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
       background-color: #ed4600;
       font-size: 16pt;
       border-radius: 10px;
+      border-radius: 3px;
     }
     .breaker{
       display: block;
@@ -110,6 +110,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
       border-radius: 10px;
     }
     #about{
+      border-radius: 3px;
+    }
+    .about{
       position: relative;
       left: 43%;
       width: 14%;

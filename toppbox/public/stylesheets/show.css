@@ -6,9 +6,9 @@ body{
 
 .left{
   width:40vw;
-  background-color: #FFF;
+  background-color: #5B616A;
   display: inline-block;
-  height: 90vh;
+  height: 100vh;
   float: left;
   text-align: center;
 }
@@ -16,9 +16,9 @@ body{
 .right{
   width: 60vw;
   float: left;
-  background-color: #FFF;
+  background-color: #5B616A;
   display: inline-block;
-  height: 90vh;
+  height: 100vh;
   text-align: center;
 
 }
@@ -44,12 +44,10 @@ body{
  float: left;
  width: 49%;
  height: 100%;
- background-color: red;
 }
 
 .metricsRight{
   float: left;
-  background-color: pink;
   height: 100%;
   width: 49%;
 }
