@@ -42,7 +42,6 @@ module.exports = getData().then(function(response){
   boxOffice.amounts = amounts;
   titles.shift()
   boxOffice.titles = titles;
-  console.log(boxOffice);
   return boxOffice;
 
 })
