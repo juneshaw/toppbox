@@ -4,14 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-<<<<<<< HEAD
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy
 var User = require('./public/javascripts/user');
-=======
-// var dragula = require('dragula');
 
->>>>>>> corey_master
+
+
+
 
 
 var routes = require('./routes/index');
