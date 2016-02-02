@@ -4,16 +4,21 @@ html, body{
   background-color: #000
 }
 
-.userPick{
+#userPick{
   background-color: #23332B;
   width: 100vw;
   height: 60vh;
   padding-top: 50px;
+  overflow: hidden;
 }
 
+<<<<<<< HEAD
 button{
 
 }
+=======
+
+>>>>>>> jessMaster
 .allPicks{
   display: inline;
   width: 100vw;
@@ -21,14 +26,36 @@ button{
 
 }
 
+<<<<<<< HEAD
 .movieImgs{
   width: 150px;
   height: 150px;
   display: inline-block;
   margin: 10px auto;
   padding: 35px;
+=======
+#movie_img{
+  width: 140px;
+  height: 200px;
+  display: inline-block;
+  margin: 10px auto;
+  padding: 40px;
+  border-radius: 50px;
 }
-
+#submit{
+  width: 30%;
+  height: 5%;
+  background-color: red;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 20px;
+}
+#submit:hover{
+  color: grey;
+>>>>>>> jessMaster
+}
 
 /*draggula stuff*/
 

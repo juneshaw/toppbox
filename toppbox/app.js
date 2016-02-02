@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 // var dragula = require('dragula');
 
 var $ = require('jquery');
+
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy
 var User = require('./public/javascripts/user');

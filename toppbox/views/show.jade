@@ -2,8 +2,10 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/show.css')
+  //- if movie
+  //- h1=movie.name
   div.left
-    h1.title Title
+    h1.title Movie Title
     img.movieImgs(src='http://placehold.it/200x200')
     p % Picked This
     p.info info
@@ -14,9 +16,10 @@ block content
       div.metricsLeft
         p rotten tomatoes rating
         p budget
-      div.metricsRight
-        h3 description
+        h3 Description
         p "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        iframe(type='text/html' width='200' height='200' src='http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com' frameborder='0')
+      div.metricsRight
+        h3 Trailer
+        iframe(type='text/html' width='200' height='200' src='' frameborder='1')
 
           
