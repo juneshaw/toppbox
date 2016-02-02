@@ -162,6 +162,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 
 .modalDialog > div {
 	width: 400px;
+  height: 300px;
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
