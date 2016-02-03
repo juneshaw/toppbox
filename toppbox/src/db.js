@@ -123,7 +123,8 @@ function loginPasswordHash(user_name) {
 }
 
 function userByEmail(email) {
-  return(Users().where('email', email));
+  console.log('emai in userByEmail =', email);
+  return(Users().where('email', email).first());
 }
 
 function votesByUserDate(user_id, date) {

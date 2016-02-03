@@ -4,6 +4,7 @@ var topfive = require('../public/javascripts/topfive')
 var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
+var db = require('../src/db.js')
 
 
 
@@ -11,6 +12,11 @@ router.get('/', function(req, res, next) {
       res.render('index')
   })
 
+router.post('/', function(req, res, next) {
+  db.userByEmail(req.body.email).then(function(results) {
+    console.log('user email result = ', results);
+  })
+})
 
 
 router.get('/vote', function(req, res, next) {
