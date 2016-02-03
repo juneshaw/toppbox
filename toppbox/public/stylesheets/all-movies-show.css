@@ -6,7 +6,7 @@ background: -webkit-linear-gradient(left,  #23332b 50%,#5b616a 100%); /* Chrome1
 background: linear-gradient(to right,  #23332b 50%,#5b616a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23332b', endColorstr='#5b616a',GradientType=1 ); /* IE6-9 */
 
-overflow-x: hidden;	
+overflow-x: hidden;
 
 }
 
@@ -19,7 +19,7 @@ overflow-x: hidden;
 	top: 25%;
 	display: inline-block;
 	position: relative;
-	margin: auto; 
+	margin: auto;
 	left: 45%;
 	width: 10%;
 }
@@ -77,6 +77,8 @@ overflow-x: hidden;
 	position: relative;
 	display: inline-block;
 	margin: 15px 15px;
+	width: 210px;
+	height: 300px;
 }
 
 #example{

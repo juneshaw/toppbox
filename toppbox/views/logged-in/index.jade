@@ -18,16 +18,10 @@ include ../layout
 
 div.containing-container
 	div.movie-container
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
-		img.middle-poster(src= "http://placehold.it/210x300")
+		if movies
+			for movie in movies
+				if movie.image
+					img.middle-poster(src= movie.image)
 	|<div id="example">
 	
 	|    <div id="ticker" class="stockTicker">

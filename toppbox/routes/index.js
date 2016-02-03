@@ -19,7 +19,10 @@ router.get('/vote', function(req, res, next) {
   var url = originalUrl.replace(/['"]+/g, '');
   getupcoming.then(function(data){
     data['results'].forEach(function(movie){
-      movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+      console.log(movie.poster_path);
+      if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
+        movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+      }
     });
 
     res.render('vote', {movies: movies, photoUrl: url, userName: usersName, toppboxemail:email})
