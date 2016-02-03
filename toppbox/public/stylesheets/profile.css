@@ -10,11 +10,16 @@
   display: flex;
   flex-direction: row;
   /*flex: 1 0 auto;*/
-  width: 45%;
+  width: 40%;
   height: 50%;
   padding: 20px;
-  margin: 5px;
+  margin: 0 auto;
+  margin-bottom: 10px;
   border: solid 2px black;
+}
+
+.box li {
+  display: block;
 }
 
 .box img {

@@ -6,6 +6,8 @@ exports.up = function(knex, Promise) {
     table.integer('total_earnings');
     table.string('photo_link');
     table.string('trailer_link');
+    table.float('popularity');
+    table.string('overview');
   })
 };
 

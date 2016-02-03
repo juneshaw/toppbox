@@ -4,14 +4,13 @@ var topfive = require('../public/javascripts/topfive')
 var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
+var db = require('../src/db')
 
 
 
 router.get('/', function(req, res, next) {
       res.render('index')
   })
-
-
 
 router.get('/vote', function(req, res, next) {
   var movies= []
@@ -32,10 +31,7 @@ router.get('/show/:id', function(req, res, next) {
   //     movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
   //   });
   // res.render('show', {movies:movie});
-  res.render('show');
 })
-// })
-
 
 router.get('/approved', function(req, res, next) {
   res.render('profile');
@@ -48,8 +44,10 @@ router.post('/vote', function(req, res, next){
   res.redirect('/')
 })
 
+
 router.get('/show', function(req, res, next) {
   res.render('show', { title: 'Show Page' });
 });
+
 
 module.exports = router;

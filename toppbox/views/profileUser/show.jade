@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+
+  link(rel='stylesheet', href='/stylesheets/profile.css')
+
+  div.grid
+    div.box
+      img(src="../#{user.photo_link}")
+    div.box
+      for movieVote in movieVotes
+        li #{movieVote.name}
+          p #{movieVote.comment}
+    div.box
+    div.box
