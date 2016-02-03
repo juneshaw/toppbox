@@ -32,7 +32,14 @@
       var originalUrl = localStorage.getItem('photo');
       var email = localStorage.getItem('email').replace(/['"]+/g, '');
       var url = originalUrl.replace(/['"]+/g, '');
-      res.render("logged-in/index", {photoUrl: url, userName: usersName, toppboxemail:email});
+      getupcoming.then(function(data){
+        data['results'].forEach(function(movie){
+          if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
+            movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+          }
+        });
+        res.render("logged-in/index", {movies:movies, photoUrl: url, userName: usersName, toppboxemail:email});
+      })
     })
 
 
