@@ -2,22 +2,22 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/show.css')
-  if movie
+  if data
     div.left
-      h1= movie.name
-      img.movieImgs(src='http://image.tmdb.org/t/p/w500'+ movie.photo_link height='400px' width='200px')
+      h1= data.title
+      img.movieImgs(src='http://image.tmdb.org/t/p/w500'+ data.photo_link height='400px' width='200px')
       p % Picked This
-
+    
     div.right
       h1 Metrics
       div.metrics
         div.metricsLeft
           h3 Popularity
-          p= movie.popularity
+          p= data.popularity
           h3 Description
-          p= movie.overview
+          p= data.overview
         div.metricsRight
           h3 Trailer
           iframe(type='text/html' width='200' height='200' src='' frameborder='1')
-
+    
           

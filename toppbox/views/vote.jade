@@ -13,7 +13,9 @@ block content
     div.allPicks
       if movies
         for movie in movies
-          img(src= movie.image class= '*#'+movie.title+'$' id="movie_img")
-   
+          a(href='/'+movie.title)
+            img(src= movie.image class= '*#'+movie.title+'$' id="movie_img")
+          
+            
    form#someForm(action="/vote" method="POST")
      input(type="hidden" name="user_picks" id="useDataField")

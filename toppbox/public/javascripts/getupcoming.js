@@ -19,5 +19,5 @@ function getUpcoming(){
 }
 
 module.exports = getUpcoming().then(function(data){
-  return data; 
+  return data;
 })

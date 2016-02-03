@@ -47,15 +47,27 @@ router.get('/show', function(req, res, next) {
   res.render('show');
 });
 
+// router.get('/:title', function(req, res, next) {
+//   getupcoming.then(function(data){
+//     data['results'].forEach(function(movie){
+//       var movieName = movie.title.replace(/ /g,'').toLowerCase();
+//       movieName = movieName.replace(/,/g, '');
+//       movieName = movieName.replace(/-/g, '');
+//       console.log(movieName);
+//       if(req.params.title === movieName){
+//         res.render('show', {title: movieName, movie[0]});
+//       }
+//     })
+//   })
+// })
 
-//get by name instead of pulling from database
-router.get('/:id', function(req, res, next) {
-  Movies().where('id', req.params.id).first().then(function(result){
-    console.log(req.body);
-    res.render('show', {movie: result});
+router.get('/:title', function(req, res, next) {
+  console.log(req.params);
+  db.movieByTitle(req.params.title).then(function(results){
+    console.log("calling!")
+    res.render('show', {data: results});
   })
 })
-
 
 
 

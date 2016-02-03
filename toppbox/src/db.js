@@ -131,6 +131,10 @@ function movieTitles(movieIds) {
   return (Movies().whereIn('id', movieIds));
 }
 
+function movieByTitle(name) {
+ console.log('in movieByTitle')
+ return(Movies().where('name', name).first())
+}
 // function moviesByUserVote(email, date) {
 //   return(Movies).
 // }
@@ -165,6 +169,7 @@ userPasswordHash: userPasswordHash,
 userByEmail: userByEmail,
 votesByUserDate: votesByUserDate,
 voteMovies: voteMovies,
-movieTitles: movieTitles
+movieTitles: movieTitles,
+movieByTitle: movieByTitle
 
 }
