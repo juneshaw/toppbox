@@ -37,9 +37,7 @@ router.get('/vote', function(req, res, next) {
   })
 });
 
-<<<<<<< HEAD
 
-=======
 //need to add id to render the right page
 router.get('/show/:id', function(req, res, next) {
   var movies= []
@@ -50,7 +48,6 @@ router.get('/show/:id', function(req, res, next) {
   })
   res.render('show', {movies:movies});
 })
->>>>>>> d538e776c35443a860ac29fb89af2e036a658343
 
 router.get('/approved', function(req, res, next) {
   res.render('profile');
