@@ -47,12 +47,16 @@ router.get('/show', function(req, res, next) {
   res.render('show');
 });
 
+
+//get by name instead of pulling from database
 router.get('/:id', function(req, res, next) {
   Movies().where('id', req.params.id).first().then(function(result){
     console.log(req.body);
     res.render('show', {movie: result});
   })
 })
+
+
 
 
 module.exports = router;
