@@ -4,7 +4,13 @@ var topfive = require('../public/javascripts/topfive')
 var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
+var knex = require('../db/knex');
 
+
+function Movies(){
+  return knex('movies');
+  console.log(knex('movies'));
+}
 
 
 router.get('/', function(req, res, next) {
@@ -24,15 +30,7 @@ router.get('/vote', function(req, res, next) {
   })
 });
 
-//need to add id to render the right page
-router.get('/show/:id', function(req, res, next) {
-  // var movies= []
-  // getupcoming.then(function(data){
-  //   data['results'].forEach(function(movie){
-  //     movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
-  //   });
-  // res.render('show', {movies:movie});
-})
+
 
 router.get('/approved', function(req, res, next) {
   res.render('profile');
@@ -47,8 +45,15 @@ router.post('/vote', function(req, res, next){
 
 
 router.get('/show', function(req, res, next) {
-  res.render('show', { title: 'Show Page' });
+  res.render('show');
 });
+
+router.get('/:id', function(req, res, next) {
+  Movies().where('id', req.params.id).first().then(function(result){
+    console.log(req.body);
+    res.render('show', {movie: result});
+  })
+})
 
 
 module.exports = router;

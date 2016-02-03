@@ -2,24 +2,22 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/show.css')
-  //- if movie
-  //- h1=movie.name
-  div.left
-    h1.title Movie Title
-    img.movieImgs(src='http://placehold.it/200x200')
-    p % Picked This
-    p.info info
+  if movie
+    div.left
+      h1= movie.name
+      img.movieImgs(src='http://image.tmdb.org/t/p/w500'+ movie.photo_link height='400px' width='200px')
+      p % Picked This
 
-  div.right
-    h1 Metrics
-    div.metrics
-      div.metricsLeft
-        p rotten tomatoes rating
-        p budget
-        h3 Description
-        p "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      div.metricsRight
-        h3 Trailer
-        iframe(type='text/html' width='200' height='200' src='' frameborder='1')
+    div.right
+      h1 Metrics
+      div.metrics
+        div.metricsLeft
+          h3 Popularity
+          p= movie.popularity
+          h3 Description
+          p= movie.overview
+        div.metricsRight
+          h3 Trailer
+          iframe(type='text/html' width='200' height='200' src='' frameborder='1')
 
           
