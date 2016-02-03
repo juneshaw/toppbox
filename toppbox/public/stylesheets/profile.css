@@ -4,6 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   height: 75vh;
+  top: 14%;
+  position: relative;
 }
 
 .box {
