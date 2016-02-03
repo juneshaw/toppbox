@@ -5,6 +5,7 @@ var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
 var knex = require('../db/knex');
+var db = require('../src/db')
 
 
 function Movies(){
@@ -16,8 +17,6 @@ function Movies(){
 router.get('/', function(req, res, next) {
       res.render('index')
   })
-
-
 
 router.get('/vote', function(req, res, next) {
   var movies= []
