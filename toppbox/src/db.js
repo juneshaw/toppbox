@@ -110,21 +110,13 @@ function deleteMovieVote(id) {
   return(Movie_Votes().where('id', id).del());
 }
 
-function loginUserId(user_name) {
-  return(Logins().select('id').where('user_name', user_name).first());
-}
-
-function loginUserName(user_name) {
-  return(Logins().where('user_name', user_name).first());
-}
-
-function loginPasswordHash(user_name) {
-  return(Logins().select('passwordHash').where('user_name', user_name).first());
+function userPasswordHash(email) {
+  return(Users().select('passwordHash').where('email', email).first());
 }
 
 function userByEmail(email) {
-  console.log('emai in userByEmail =', email);
-  return(Users().where('email', email).first());
+  console.log('email in userByEmail =', email);
+  return(Users().select('id').where('email', email));
 }
 
 function votesByUserDate(user_id, date) {
@@ -165,9 +157,8 @@ deleteRanking: deleteRanking,insertRanking: insertMovieVote,
 ranking: ranking,
 updateMovieVote: updateMovieVote,
 deleteMovieVote: deleteMovieVote,
-loginUserId: loginUserId,
-loginUserName: loginUserName,
-loginPasswordHash: loginPasswordHash,
+userPasswordHash: userPasswordHash,
+userByEmail: userByEmail,
 votesByUserDate: votesByUserDate,
 voteMovies: voteMovies,
 

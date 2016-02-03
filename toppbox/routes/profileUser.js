@@ -7,22 +7,16 @@ var db = require('../src/db.js')
 var format = require('../public/javascripts/helpers')
 
 
-router.get('/', function(req, res, next) {
-  console.log('in the route for the profileUser');
-  getupcoming.then(function(results) {
-    console.log('results of getupcoming = ', results);
-
-    results.results.forEach(function(movie, index) {
-      console.log('in the loop ', index);
-      var insertMovie = {'name': movie.title,
-                  'photo_link': movie.poster_path,
-                  'overview': movie.overview,
-                  'popularity': movie.popularity}
-      db.insertMovie(insertMovie).then(function(results) {
-        console.log('results of insert: ', results);
-      })
+router.get('/:email', function(req, res, next) {
+  db.userByEmail(req.params.email).first().then(function(user) {
+    console.log('user = ', user);
+    var date = "02-01-16";
+    db.votesByUserDate(user.id, date).then(function(votes) {
+      console.log('votes = ', votes);
+      res.render('profileUser/show',
+      {'user': user,
+       'votes': votes});
     })
-    res.render('profileUser/show')
   })
 })
 

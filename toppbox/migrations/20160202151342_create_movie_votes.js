@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.integer('vote_id');
     table.integer('movie_id');
     table.integer('rank');
+    table.string('comment');
   })
 };
 
