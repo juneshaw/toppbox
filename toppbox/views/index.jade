@@ -1,13 +1,12 @@
-
 | <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 block content
   link(rel='stylesheet', href='../stylesheets/sign-in.css')
-
+  div.banner
+    div.logo-holder
+      img.logo(src="images/Logo.png", alt="Logo")
   div.holder
     div.shadow
-    div.banner
-      div.logo-holder
-        img.logo(src="images/Logo.png", alt="Logo")
+    
     div.left
       h1.sign-in.jura SIGN IN
       form(action="/" method="POST")
@@ -29,11 +28,20 @@ block content
 
     img.about(src="images/Fuck.png", alt="Logo")
     div.about-div
-      img.about-watch(src="images/Watch.png", alt="Logo")
-      img.about-compete(src="images/compete.png", alt="Logo")
-      img.about-picks(src="images/Picks.png", alt="Logo")
+      img.about-watch.about-sec(src="images/Watch.png", alt="Logo")
+      img.about-compete.about-sec(src="images/compete.png", alt="Logo")
+      img.about-picks.about-sec(src="images/Picks.png", alt="Logo")
 
-  script(type='text/javascript').
-    if (window.location.hash && window.location.hash == '#_=_') {
-      window.location.hash = '';
-    }
+    script(type='text/javascript').      
+        if (window.location.hash && window.location.hash == '#_=_') {
+          window.location.hash = '';
+        }
+        $(".about").click(scrollDown);
+        function scrollDown(){
+          $(document).ready(function(){
+            $('html, body').animate({
+            scrollTop: $(".about-div").offset().top - 400,
+            scrollLeft: $(".shadow").offset().left
+            }, 2000);
+          })
+        }

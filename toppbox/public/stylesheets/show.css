@@ -2,6 +2,8 @@ body{
   margin: 0px;
   padding: 0px;
   width: 100vw;
+  background-color: #000;
+
 }
 
 .logo-holder{
@@ -10,21 +12,23 @@ body{
   height: 12vh;
 }
 .left{
-  width:40vw;
-  background-color: #5B616A;
+  width:30vw;
   display: inline-block;
   height: 100vh;
   float: left;
   text-align: center;
+  color: #fff;
+  padding-left: 100px;
 }
 
 .right{
-  width: 60vw;
-  float: left;
-  background-color: #5B616A;
+  width: 50vw;
+  background-color: #000;
   display: inline-block;
   height: 100vh;
   text-align: center;
+  color: #fff;
+
 
 }
 
@@ -39,13 +43,13 @@ body{
 .metrics{
   border: solid black 2px;
   margin: 20px auto;
-  height: 400px;
+  height: 340px;
   width: 500px;
   text-align: left;
-  background-color: #23332B;
   padding: 20px;
   padding-top: 40px;
 }
+.metrics
 
 .metricsLeft{
  float: left;

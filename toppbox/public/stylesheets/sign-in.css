@@ -14,8 +14,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
   .jura{
     font-family: 'Jura', sans-serif;
   }
+  .holder{
+    position: relative;
+    width: 100%;
+    top: 0%;
+    height: 102%;
+  }
   .banner{
-    position: absolute;
+    position: relative;
     top: 0%;
     width: 80%;
     height: 14%;
@@ -38,12 +44,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     }
     .left{
       position: absolute;
-      /*top: 14%;*/
+      /* top: 14%; */
       left: 10%;
       width: 40%;
       height: 81%;
       background-color: #e9c291;
-      border-right: 2px solid black;
+      border-right: 2px solid #e9c291;
     }
     .facebook{
       position: absolute;
@@ -112,6 +118,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     #about{
       border-radius: 3px;
     }
+    .about-sec{
+      position: relative;
+      width: 33%;
+    }
+
     .about{
       position: relative;
       left: 43%;
@@ -140,7 +151,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     .bottom-abouts{
       position: relative;
       width: 33%;
-    } 
+    }
     /* Modal register css */
 
   .modalDialog {

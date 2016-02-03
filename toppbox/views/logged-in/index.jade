@@ -21,7 +21,8 @@ div.containing-container
 		if movies
 			for movie in movies
 				if movie.image
-					img.middle-poster(src= movie.image)
+					a(href='/'+movie.title)
+						img.middle-poster(src= movie.image)
 	|<div id="example">
 	
 	|    <div id="ticker" class="stockTicker">
