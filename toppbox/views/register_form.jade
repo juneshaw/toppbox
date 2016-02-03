@@ -1,0 +1,14 @@
+block content
+  div.form_container
+
+      form.register(action = '/' method= "POST")  
+        div.form-group
+          label(for="email") Email
+          input.register_input(type="text" name="email")
+        div.form-group
+          label(for="password") Password
+          input.register_input(type="password" name="password")
+        div.form-group
+          label(for="password_check") Re-enter Password
+          input.register_input(type="password" name="password_check")
+        button(type="submit") Create Account!    

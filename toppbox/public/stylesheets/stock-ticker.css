@@ -1,0 +1,89 @@
+div#examplePage {
+    color: #000;
+    font-family: Verdana, Arial, Helvetica, San-serif;
+    font-size: x-small;
+    text-align: left;
+    width: 760px;
+    margin: 0 auto;
+    padding: 0;
+}
+ 
+h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+ 
+div#example {
+    background: #c3c1c1 none repeat-x scroll left top;
+    width: 100vw;
+    margin: 20px 0 3px;
+}
+ 
+div#example h3 {
+    font-size: xx-small;
+    font-style: italic;
+    padding: 0;
+    margin: 0 10px 0;
+    line-height: 14px;
+}
+ 
+.container {
+    background: #EFC378 none;
+    border: 1px solid #000;
+    height: 50px;
+    margin: 0 auto;
+    width: 100vw;
+}
+ 
+.container .wrap {
+    width: 100vw;
+    left: 10px;
+    top: 10px;
+    overflow: hidden;
+    position: relative;
+    line-height: normal;
+    font-size-adjust: none;
+}
+ 
+/**
+ * Stock Ticker styling
+ */
+.stockTicker {
+    font-family: Verdana, Arial, Helvetica, San-serif;
+    font-size: x-small;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+}
+
+.stockTicker li,
+.stockTicker span {
+    margin: 0 10px 0;
+    display: inline-block;
+}
+ 
+.stockTicker .up {
+    color: green;
+    padding-left: 2px;
+}
+ 
+.stockTicker .down {
+    color: red;
+    margin: 0;
+    padding-left: 10px;
+}
+ 
+.stockTicker .eq {
+    margin: 0;
+    padding-left: 10px;
+}
+ 
+div.stockTicker .quote {
+    margin: 0;
+    font-weight: bold;
+    padding-left: 10px;
+}
+ 

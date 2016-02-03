@@ -1,0 +1,84 @@
+link(rel='stylesheet', href='../stylesheets/all-movies-show.css')
+link(rel='stylesheet', href='../stylesheets/stock-ticker.css')
+| <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+
+
+div.nav-bar
+	p.profile-name= 'my homie ' + userName
+	img.profile-img(src= photoUrl)
+div.containing-container
+	div.movie-container
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+		img.middle-poster(src= "http://placehold.it/210x300")
+	|<div id="example">
+	
+	|    <div id="ticker" class="stockTicker">
+	|      <span class="up"><span class="quote">ERA</span> 123.234 1.2%</span>
+	|      <span class="down">
+	|        <span class="quote">DFF</span> 20.543 -5.2%</span>
+	|      <span class="eq">
+	|        <span class="quote">CBX</span> 523.234 0.0%</span>
+	|      <span class="down"><span class="quote">IZF</span> 89.65 -3.4%</span>
+	|      <span class="up"><span class="quote">KJG</span> 456.64 0.318%</span><span class="up"><span class="quote">QWE</span> 6413.123 0.012%</span><span class="eq"><span class="quote">CVN</span> 6.3 0.0%</span><span class="down"><span class="quote">UIT</span>      74.543 -0.321%</span><span class="quote">Stock Quotes: </span><span class="up"><span class="quote">ABC</span> 1.543 0.2%</span><span class="down"><span class="quote">SDF</span> 12.543 -0.74%</span><span class="up"><span class="quote">JDF</span>      34.543 5.2%</span>
+	|    </div>
+	
+	|    <ul id="csTicker" class="stockTicker">
+	|      <li class="up">
+	|        <span class="ticker__index">DJIA</span>
+	|        <span class="pi pi--up"> +0.21%</span>
+	|      </li>
+	|      <li class="eq"><span class="ticker__index">DJIA</span>
+	|        <span class="pi pi--up"> +0.21%</span></li>
+	|      <li class="up"><span class="ticker__index">DJIA</span>
+	|        <span class="pi pi--up"> +0.21%</span></li>
+	|      <li class="down"><span class="ticker__index">DJIA</span>
+	|        <span class="pi pi--up"> +0.21%</span></li>
+	|      <li class="up">dsgdg</li>
+	|      <li class="eq">46436</li>
+	|      <li class="up">dfhd4t4wt4</li>
+	|      <li class="down">qewewrwrwrwrwrwr</li>
+	|      <li>t46436</li>
+	|      <li class="up">dsgdg</li>
+	|      <li class="eq">46436</li>
+	|      <li class="up">dfhd4t4wt4</li>
+	|      <li class="down">qewewrwrwrwrwrwr</li>
+	|      <li>t46436</li>
+	|      <li class="up">dsgdg</li>
+	|      <li class="eq">46436</li>
+	|      <li class="up">dfhd4t4wt4</li>
+	|      <li class="down">qewewrwrwrwrwrwr</li>
+	|      <li>t46436</li>
+	|    </ul>
+	
+	|  </div>
+
+	div.leaderboard
+		ul
+			li 1.) Corey - $2250000
+			li 2.) June - $2000000
+			li 3.) Jessica - $1500000
+			li 4.) Josh - $1000000
+			li 1.) Corey - $2250000
+			li 2.) June - $2000000
+			li 3.) Jessica - $1500000
+			li 4.) Josh - $1000000
+			li 1.) Corey - $2250000
+			li 2.) June - $2000000
+			li 3.) Jessica - $1500000
+			li 4.) Josh - $1000000
+
+
+
+script(type='text/javascript').      
+	console.log(localStorage.getItem("myFirstKey"))
+script(src='../javascripts/StockTicker.js')

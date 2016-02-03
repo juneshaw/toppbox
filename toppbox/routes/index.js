@@ -24,6 +24,16 @@ router.get('/vote', function(req, res, next) {
   })
 });
 
+//need to add id to render the right page
+router.get('/show/:id', function(req, res, next) {
+  // var movies= []
+  // getupcoming.then(function(data){
+  //   data['results'].forEach(function(movie){
+  //     movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+  //   });
+  // res.render('show', {movies:movie});
+})
+
 router.get('/approved', function(req, res, next) {
   res.render('profile');
 });
@@ -31,7 +41,18 @@ router.get('/approved', function(req, res, next) {
 router.post('/vote', function(req, res, next){
   var errors = []
   var picks = format.formatPicks(req.body);
+  console.log(picks);
   res.redirect('/')
 })
 
+
+router.get('/show', function(req, res, next) {
+  res.render('show', { title: 'Show Page' });
+});
+
+
+
+
+=======
+>>>>>>> 6db2b48b86707ad5f3cfce4eb8c76f9012def600
 module.exports = router;

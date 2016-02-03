@@ -2,19 +2,19 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var localStorage = require('localStorage');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+// var dragula = require('dragula');
+
+
+
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy
 var User = require('./public/javascripts/user');
 var profileUser = require('./routes/profileUser');
 var buildDB = require('./routes/buildDB');
-
-
-
-
-
-
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -53,16 +53,20 @@ passport.use(new FacebookStrategy({
     clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
     callbackURL: "http://localhost:3000/auth/facebook/",
     enableProof: true,
-    profileFields: ['id', 'photos', 'emails']
+    profileFields: ['name', 'id', 'photos', 'emails']
   },
   function(token, refreshToken, profile, done) {
     console.log("Auth done");
     done(null, profile);
-    console.log(profile);
   }));
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+
+    localStorage.setItem('name', JSON.stringify(user["name"]["givenName"] + " " + user["name"]["familyName"]));
+    localStorage.setItem('photo', JSON.stringify(user["_json"]["picture"]["data"]["url"]));
+    var retrievedObject = localStorage;
+    console.log(retrievedObject);
+    done(null, user);
 });
 
 // used to deserialize the user
