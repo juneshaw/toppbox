@@ -55,7 +55,7 @@ passport.use(new FacebookStrategy({
     clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
     callbackURL: "http://localhost:3000/auth/facebook/",
     enableProof: true,
-    profileFields: ['name', 'id', 'photos', 'emails']
+    profileFields: ['name', 'id','picture.type(large)', 'emails']
   },
   function(token, refreshToken, profile, done) {
     console.log("Auth done");
@@ -84,8 +84,9 @@ passport.serializeUser(function(user, done) {
       // }
     // )
 
+
     var retrievedObject = localStorage;
-    console.log(retrievedObject);
+    console.log(user["_json"]["picture"]["data"]["url"]);
     done(null, user);
 });
 
