@@ -53,7 +53,7 @@ app.use('/buildDB', buildDB);
 passport.use(new FacebookStrategy({
     clientID: "1643675802563018",
     clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
-    callbackURL: "http://toppbox-dev.herokuapp/auth/facebook/",
+    callbackURL: "http://toppbox-dev.herokuapp/auth/facebook.com",
     enableProof: true,
     profileFields: ['name', 'id','picture.type(large)', 'emails']
   },
