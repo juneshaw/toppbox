@@ -1,0 +1,52 @@
+.toppbox-logo{
+	top: 25%;
+	display: inline-block;
+	position: relative;
+	margin: auto;
+	left: 45%;
+	width: 10%;
+}
+.nav-bar{
+	position: fixed;
+	display: block;
+	height: 10%;
+	width: 100%;
+	background-color: black;
+	top: 0%;
+	left: 0%;
+	z-index: 5;
+}
+.nav-bar a{
+	text-decoration: none;
+}
+.navLeft{
+  position: relative;
+  top: 35%;
+  display: inline-block;
+  width: 65%;
+  height: 10px;
+  text-align: right;
+  float: right;
+}
+.navLeft a{
+  text-decoration: none;
+  color: inherit;
+  float: right;
+  color: white;
+  margin-right: 64px;
+  top: 42%;
+}
+.profile-img{
+	position: absolute;
+	top: 10%;
+	left: 1%;
+	height: 80%;
+	width: auto;
+}
+.profile-name{
+	position: absolute;
+	left: 6.2%;
+	color: #ED4600;
+	top: 42%;
+	line-height: 100%;
+}

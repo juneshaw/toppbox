@@ -4,10 +4,15 @@ var topfive = require('../public/javascripts/topfive')
 var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
 var db = require('../src/db.js')
+var localStorage = require('localStorage');
 var format = require('../public/javascripts/helpers')
 
 
 router.get('/:email', function(req, res, next) {
+  var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
+  var originalUrl = localStorage.getItem('photo');
+  var email = localStorage.getItem('email').replace(/['"]+/g, '');
+  var url = originalUrl.replace(/['"]+/g, '');
   db.userByEmail(req.params.email).first().then(function(user) {
     console.log('user = ', user);
     var date = "2016-02-01";
@@ -18,12 +23,18 @@ router.get('/:email', function(req, res, next) {
           console.log('vote movieVotes = ', movieVotes);
           res.render('profileUser/show',
           {'user': user,
-          'movieVotes': movieVotes});
+          'movieVotes': movieVotes,
+          photoUrl: url,
+           userName: usersName,
+            toppboxemail:email});
         })
       } else {
         res.render('profileUser/show',
                   {'user': user,
-                  'movieVotes': []})
+                  'movieVotes': [],
+                  photoUrl: url,
+                  userName: usersName,
+                  toppboxemail:email})
       }
     })
   })
