@@ -5,6 +5,8 @@ var unirest = require('unirest')
 var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
 var db = require('../src/db')
+var format = require('../public/javascripts/helpers')
+var localStorage = require('localStorage')
 
 
 
@@ -38,12 +40,24 @@ router.get('/approved', function(req, res, next) {
 });
 
 router.post('/vote', function(req, res, next){
-  var errors = []
+  var date = new Date();
+  var email = localStorage.getItem('email').replace(/['"]+/g, '');
   var picks = format.formatPicks(req.body);
-  console.log(picks);
+  db.userByEmail(email).then(function(result) {
+    var userId = result[0].id;
+    console.log('result = !!!', result);
+    db.insertVote({'user_id': userId,
+                  'date': date}).then (function(results) {
+      console.log('insert Vote results', results);
+      db.votesByUserDate(userId, date).then(function(results) {
+        console.log('vote id is ', results);
+        format.addMovieVotes(picks, results.id);
+      })
+    })
+  })
+  console.log('picks!!!', picks);
   res.redirect('/')
 })
-
 
 router.get('/show', function(req, res, next) {
   res.render('show', { title: 'Show Page' });

@@ -5,6 +5,8 @@ var logger = require('morgan');
 var localStorage = require('localStorage');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var db = require ('./src/db.js');
+
 
 // var dragula = require('dragula');
 
@@ -61,9 +63,27 @@ passport.use(new FacebookStrategy({
   }));
 
 passport.serializeUser(function(user, done) {
-
+    localStorage.setItem('email', JSON.stringify(user["_json"]['email']));
     localStorage.setItem('name', JSON.stringify(user["name"]["givenName"] + " " + user["name"]["familyName"]));
     localStorage.setItem('photo', JSON.stringify(user["_json"]["picture"]["data"]["url"]));
+
+    // var email = localStorage.getItem('email').replace(/['"]+/g, '');
+
+      var email = user["_json"]['email'];
+      var first_name = JSON.stringify(user["_json"]["first_name"])
+      var last_name = JSON.stringify(user['_json']['last_name'])
+      var photo_link = JSON.stringify(user["_json"]["picture"]["data"]["url"])
+        db.insertUser({'email': email,
+                      'first_name': first_name,
+                      'last_name': last_name,
+                       'photo_link': photo_link,
+                       'total_score': 0
+                    }).then (function(results, error) {
+                      console.log('results', results, 'error', error);
+                    })
+      // }
+    // )
+
     var retrievedObject = localStorage;
     console.log(retrievedObject);
     done(null, user);

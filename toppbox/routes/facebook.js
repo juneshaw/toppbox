@@ -2,6 +2,7 @@
     var router = express.Router();
     var passport = require('passport');
     var localStorage = require('localStorage');
+    var db = require ('../src/db.js');
 
     router.get('/auth/facebook', passport.authenticate('facebook', {successRedirect: '/auth/home', scope : 'email'}));
 
@@ -10,6 +11,7 @@
       var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
       var originalUrl = localStorage.getItem('photo');
       var url = originalUrl.replace(/['"]+/g, '');
+
       res.render("logged-in/index", {photoUrl: url, userName: usersName});
     })
 

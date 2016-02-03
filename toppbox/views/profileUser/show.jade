@@ -6,7 +6,7 @@ block content
 
   div.grid
     div.box
-      img(src="../#{user.photo_link}")
+      img(src=user.photo_link)
     div.box
       for movieVote in movieVotes
         li #{movieVote.name}

@@ -30,6 +30,7 @@ function MovieVotes() {
 }
 
 function insertUser(user) {
+  console.log('in insertUser', user);
   return(Users().insert(user));
 }
 
@@ -95,6 +96,7 @@ function deleteRanking(id) {
 }
 
 function insertMovieVote(movie_vote) {
+  console.log('movieVote = ',movie_vote);
   return(MovieVotes().insert(movie_vote));
 }
 
@@ -115,12 +117,20 @@ function userPasswordHash(email) {
 }
 
 function userByEmail(email) {
-  console.log('email in userByEmail =', email);
   return(Users().where('email', email));
+}
+
+function movieByTitle(title) {
+  console.log('in movieByTitle')
+  return(Movies().where('name', title).first())
 }
 
 function votesByUserDate(user_id, date) {
   return (Votes().where('user_id', user_id).where('date', date).first());
+}
+
+function movieVotesByUserDate(date) {
+  return (MovieVotes().join('votes', 'movie_votes.vote_id', 'votes.id').where('votes.date', date))
 }
 
 function voteMovies(vote_id) {
@@ -157,14 +167,18 @@ deleteVote: deleteVote,
 insertRanking: insertRanking,
 ranking: ranking,
 updateRanking: updateRanking,
-deleteRanking: deleteRanking,insertRanking: insertMovieVote,
+deleteRanking: deleteRanking,
+insertMovieVote: insertMovieVote,
 ranking: ranking,
 updateMovieVote: updateMovieVote,
 deleteMovieVote: deleteMovieVote,
 userPasswordHash: userPasswordHash,
 userByEmail: userByEmail,
+movieByTitle: movieByTitle,
 votesByUserDate: votesByUserDate,
 voteMovies: voteMovies,
-movieTitles: movieTitles
+movieTitles: movieTitles,
+movieVotesByUserDate: movieVotesByUserDate
+
 
 }
