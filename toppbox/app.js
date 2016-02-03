@@ -8,6 +8,7 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy
 var User = require('./public/javascripts/user');
 var profileUser = require('./routes/profileUser');
+var buildDB = require('./routes/buildDB');
 
 
 
@@ -19,6 +20,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var facebook = require('./routes/facebook');
 var profileUser = require('./routes/profileUser');
+var buildDB = require('./routes/buildDB');
 
 var app = express();
 
@@ -43,6 +45,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/', facebook);
 app.use('/profileUser', profileUser);
+app.use('/buildDB', buildDB);
 
 
 passport.use(new FacebookStrategy({
