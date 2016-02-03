@@ -116,7 +116,7 @@ function userPasswordHash(email) {
 
 function userByEmail(email) {
   console.log('email in userByEmail =', email);
-  return(Users().select('id').where('email', email));
+  return(Users().where('email', email));
 }
 
 function votesByUserDate(user_id, date) {
@@ -124,7 +124,11 @@ function votesByUserDate(user_id, date) {
 }
 
 function voteMovies(vote_id) {
-  return (Movies().join('movie_votes', 'movies.id', 'movie_votes.movie_id').where('movie_votes.vote_id', vote_id));
+  return (Movies().join('movie_votes', 'movies.id', 'movie_votes.movie_id').where('movie_votes.vote_id', vote_id).orderBy('movie_votes.rank'));
+}
+
+function movieTitles(movieIds) {
+  return (Movies().whereIn('id', movieIds));
 }
 
 // function moviesByUserVote(email, date) {
@@ -161,5 +165,6 @@ userPasswordHash: userPasswordHash,
 userByEmail: userByEmail,
 votesByUserDate: votesByUserDate,
 voteMovies: voteMovies,
+movieTitles: movieTitles
 
 }

@@ -1,25 +1,15 @@
 extends ../layout
 
 block content
-  script(src='../../../public/javascripts/populateMovies.js')
 
-  script.
-    function populate() {
-      var results = populateMovies();
-      console.log('results = ', results);
-    }
+  link(rel='stylesheet', href='/stylesheets/profile.css')
 
   div.grid
     div.box
       img(src="../#{user.photo_link}")
     div.box
-      for movie in 
-      ul
-        li #{moviePick1}
-          p #{}
-        li #{moviePick2}
-        li #{moviePick3}
-        li #{moviePick4}
-        li #{moviePick5}
+      for movieVote in movieVotes
+        li #{movieVote.name}
+          p #{movieVote.comment}
     div.box
     div.box

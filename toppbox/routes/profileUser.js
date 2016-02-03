@@ -10,12 +10,21 @@ var format = require('../public/javascripts/helpers')
 router.get('/:email', function(req, res, next) {
   db.userByEmail(req.params.email).first().then(function(user) {
     console.log('user = ', user);
-    var date = "02-01-16";
-    db.votesByUserDate(user.id, date).then(function(votes) {
-      console.log('votes = ', votes);
-      res.render('profileUser/show',
-      {'user': user,
-       'votes': votes});
+    var date = "2016-02-01";
+    db.votesByUserDate(user.id, date).then(function(vote) {
+      console.log('vote = ', vote);
+      if (vote) {
+        db.voteMovies(vote.id).then(function(movieVotes) {
+          console.log('vote movieVotes = ', movieVotes);
+          res.render('profileUser/show',
+          {'user': user,
+          'movieVotes': movieVotes});
+        })
+      } else {
+        res.render('profileUser/show',
+                  {'user': user,
+                  'movieVotes': []})
+      }
     })
   })
 })
