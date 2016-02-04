@@ -28,8 +28,10 @@ router.get('/vote', function(req, res, next) {
   getupcoming.then(function(data){
     data['results'].forEach(function(movie){
       console.log(movie.poster_path);
-      if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
-        movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+      if(movie.original_language === "en"){
+        if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
+          movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+        }
       }
     });
 

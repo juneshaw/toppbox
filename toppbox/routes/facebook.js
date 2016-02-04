@@ -9,9 +9,6 @@
 
     router.get('/auth/home/', function(req, res){
       var movies= [];
-      var upOrDowns = [];
-      var stocks = [];
-      //req.query.option would equal 'my-cool-option'
       var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
       var originalUrl = localStorage.getItem('photo');
       var email = localStorage.getItem('email').replace(/['"]+/g, '');
@@ -19,21 +16,7 @@
 
       getupcoming.then(function(data){
         data['results'].forEach(function(movie){
-          fixTitle(movie.original_title);
           if(movie.original_language === "en"){
-             var upOrDown = "eq";
-             switch (Math.floor(Math.random() * 3) + 1) {
-               case 1:
-                upOrDown = "up"
-                 break;
-               case 2:
-                upOrDown = "down"
-                 break;
-             }
-             upOrDowns.push(upOrDown);
-             var html = "<span class='quote'>"+fixTitle(movie.original_title);
-             var html2 = "</span>123.234 1.2%</span>"
-            stocks.push(html + html2);
             if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
               movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
             }
@@ -52,7 +35,7 @@
 
     getupcoming.then(function(data){
       data['results'].forEach(function(movie){
-        if(movie.original_language === "en  "){
+        if(movie.original_language === "en"){
           if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
             movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
           }
