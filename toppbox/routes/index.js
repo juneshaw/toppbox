@@ -6,13 +6,13 @@ var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
 var knex = require('../db/knex');
 var db = require('../src/db')
+var localStorage = require('localStorage');
 
 function Movies(){
   return knex('movies');
   console.log(knex('movies'));
 }
 
-var localStorage = require('localStorage');
 
 
 router.get('/', function(req, res, next) {
@@ -41,12 +41,17 @@ router.get('/vote', function(req, res, next) {
 //need to add id to render the right page
 router.get('/show/:id', function(req, res, next) {
   var movies= []
+  var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
+  console.log(usersName + "***************************");
+  var originalUrl = localStorage.getItem('photo');
+  var email = localStorage.getItem('email').replace(/['"]+/g, '');
+  var url = originalUrl.replace(/['"]+/g, '');
   getupcoming.then(function(data){
     data['results'].forEach(function(movie){
       movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
     });
   })
-  res.render('show', {movies:movies});
+  res.render('show', {movies:movies, photoUrl: url, userName: usersName, toppboxemail:email});
 })
 
 router.get('/approved', function(req, res, next) {
@@ -90,15 +95,6 @@ router.get('/show', function(req, res, next) {
 //     })
 //   })
 // })
-
-router.get('/:title', function(req, res, next) {
-  console.log(req.params);
-  db.movieByTitle(req.params.title).then(function(results){
-    console.log("calling!")
-    res.render('show', {data: results});
-  })
-})
-
 
 
 module.exports = router;
