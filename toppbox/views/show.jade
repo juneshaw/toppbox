@@ -2,6 +2,10 @@ include layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/show.css')
+  script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.5.4/dragula.min.js")
+  script(src='../javascripts/vote.js')
+
   if data
     div.left
       h1= data.title
@@ -9,15 +13,13 @@ block content
       p % Picked This
     
     div.right
-      h1 Metrics
       div.metrics
         div.metricsLeft
           h3 Popularity
-          p= data.popularity
+          p= data.popularity.toFixed(2) + ' %'
           h3 Description
           p= data.overview
         div.metricsRight
-          h3 Trailer
-          iframe(type='text/html' width='200' height='200' src='' frameborder='1')
+          
     
           
