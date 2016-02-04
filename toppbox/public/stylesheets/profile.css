@@ -33,6 +33,10 @@ body{
   height: 70%;
 }
 
+.box li {
+  display: block;
+}
+
 .box-1-4 {
   display: inline-block;
   margin: 0 auto;
@@ -40,10 +44,6 @@ body{
   margin-right:10px;
   width: 20%;
   padding: 20px;
-}
-
-.box li {
-  display: block;
 }
 
 .box-1-4 img {
@@ -72,7 +72,6 @@ body{
 
 #edit:hover{
   color: grey;
-
 }
 
 .bottom {
@@ -81,6 +80,10 @@ body{
   background-color: black;
 }
 
+.bottom h4 {
+  text-align: center;
+  margin: 5px;
+}
 
 .moviePick{
   width: 300px;
@@ -94,9 +97,4 @@ body{
   float: left;
   width: 150px;
   height: 300px;
-}
-
-.bottom h4 {
-  text-align: center;
-  margin: 5px;
 }

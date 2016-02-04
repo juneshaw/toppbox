@@ -23,8 +23,6 @@ var buildDB = require('./routes/buildDB');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var facebook = require('./routes/facebook');
-var buildDB = require('./routes/buildDB');
-var profileUser = require('./routes/profileUser');
 
 var app = express();
 
@@ -44,6 +42,7 @@ app.use( express.static( "public" ) );
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.use('/buildDB', buildDB);
 app.use('/', routes);

@@ -13,23 +13,14 @@ html, body{
 }
 
 
-
-
-
 .allPicks{
-  display: inline;
-  width: 100vw;
-  margin: 10px auto;
-
+	position: relative;
+	top: 15%;
+	text-align:center;
+	left: 0%;
+	width: 100%;
 }
 
-
-.movieImgs{
-  width: 150px;
-  height: 150px;
-  display: inline-block;
-  margin: 10px auto;
-}
 
 #movie_img{
   width: 140px;
