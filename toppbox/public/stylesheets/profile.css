@@ -102,25 +102,29 @@ body{
 
 .bottom {
   display: block;
-  height: 40vh;
-  border: solid 2px black;
+  height: 80vh;
+  background-color: black;
+}
+
+
+.moviePick{
+  width: 300px;
+  height: 375px;
+  margin: 5px;
+  display: inline-block;
+  border: solid 5px #23332b;
 }
 
 .moviePick img{
-  display: inline-block;
-  width: 100px;
-  height: 200px;
-}
-
-.moviePick{
-  width: 200px;
-  height: 250px;
-  display: inline-block;
+  float: left;
+  width: 150px;
+  height: 300px;
 }
 
 .moviePick p {
-  display: inline-block
+  /*display: inline-block*/
 }
+
 .bottom h4 {
   text-align: center;
   margin: 5px;

@@ -16,5 +16,7 @@ div.grid
     each movieVote, index in movieVotes
         div.moviePick
           h4 #{index} : #{movieVote.name}
-          img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='200px')
+          h4 Popularity: #{movieVote.popularity}
+          img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='150px')
+          h5 Comments:
           p #{movieVote.comment}
