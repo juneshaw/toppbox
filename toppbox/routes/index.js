@@ -11,7 +11,6 @@ var passport = require('passport');
 
 function Movies(){
   return knex('movies');
-  console.log(knex('movies'));
 }
 
 router.get('/', function(req, res, next) {
@@ -26,7 +25,6 @@ router.get('/vote', function(req, res, next) {
   var url = originalUrl.replace(/['"]+/g, '');
   getupcoming.then(function(data){
     data['results'].forEach(function(movie){
-      console.log(movie.poster_path);
       if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
         movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
       }
@@ -65,15 +63,13 @@ router.get('/:title', function(req, res, next) {
   var email = localStorage.getItem('email').replace(/['"]+/g, '');
   var url = originalUrl.replace(/['"]+/g, '');
   db.movieByTitle(req.params.title).then(function(results){
-    console.log("calling!")
     res.render('show', {data: results,  photoUrl: url, userName: usersName, toppboxemail:email});
 router.get('/show', function(req, res, next) {
   res.render('show');
 });
 
-
 })
-
+})
 
 
 
