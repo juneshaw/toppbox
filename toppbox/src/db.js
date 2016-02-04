@@ -29,6 +29,10 @@ function MovieVotes() {
   return knex('movie_votes');
 }
 
+function Scores() {
+  return knex('scores');
+}
+
 function insertUser(user) {
   console.log('in insertUser', user);
   return(Users().insert(user));
@@ -112,6 +116,22 @@ function deleteMovieVote(id) {
   return(Movie_Votes().where('id', id).del());
 }
 
+function insertScore(score) {
+  return(Scores().insert(score));
+}
+
+function score(id) {
+  return(Scores().where('id', id))
+}
+
+function updateScore(id, score) {
+  return(Scores().where('id', id).update(score));
+}
+
+function deleteScore(id) {
+  return(Scores().where('id', id).del())
+}
+
 function userPasswordHash(email) {
   return(Users().select('passwordHash').where('email', email).first());
 }
@@ -142,7 +162,6 @@ function movieTitles(movieIds) {
 }
 
 function movieByTitle(name) {
- console.log('in movieByTitle')
  return(Movies().where('name', name).first())
 }
 // function moviesByUserVote(email, date) {
@@ -176,6 +195,10 @@ insertMovieVote: insertMovieVote,
 ranking: ranking,
 updateMovieVote: updateMovieVote,
 deleteMovieVote: deleteMovieVote,
+insertScore: insertScore,
+score: score,
+updateScore: updateScore,
+deleteScore: deleteScore,
 userPasswordHash: userPasswordHash,
 userByEmail: userByEmail,
 movieByTitle: movieByTitle,
@@ -183,6 +206,4 @@ votesByUserDate: votesByUserDate,
 voteMovies: voteMovies,
 movieTitles: movieTitles,
 movieVotesByUserDate: movieVotesByUserDate
-
-
 }

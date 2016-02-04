@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.date('date');
     table.integer('rank');
     table.integer('movie_id');
-    table.integer('earnings');
+    table.integer('total_earnings');
   })
 };
 
