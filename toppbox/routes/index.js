@@ -13,6 +13,8 @@ function Movies(){
   return knex('movies');
 }
 
+var score = require('../public/javascripts/score')
+
 router.get('/', function(req, res, next) {
       res.render('index')
   })
@@ -49,6 +51,7 @@ router.post('/vote', function(req, res, next){
                   'date': date}).then (function(results) {
       db.votesByUserDate(userId, date).then(function(results) {
         format.addMovieVotes(picks, results.id);
+        score(userId, date);
       })
     })
   })
