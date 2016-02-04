@@ -15,7 +15,6 @@ router.get('/:email', function(req, res, next) {
   var url = originalUrl.replace(/['"]+/g, '');
 
   db.userByEmail(req.params.email).first().then(function(user) {
-    console.log('user = ', user);
     var date = new Date();
     db.votesByUserDate(user.id, date).then(function(vote) {
       if (!vote) {
@@ -28,7 +27,6 @@ router.get('/:email', function(req, res, next) {
                   'toppboxemail':email})
       } else {
         db.voteMovies(vote.id).then(function(movieVotes) {
-          console.log('********movieVotes = ', movieVotes);
           res.render('profileUser/index',
           {'userName': usersName,
           'user': user,
@@ -41,10 +39,6 @@ router.get('/:email', function(req, res, next) {
       }
     })
   })
-  // res.render('profileUser/index',
-  //   {'user': user,
-  //   'movieVotes': movieVotes,
-  //   'movieArray': movieArray});
 })
 
 

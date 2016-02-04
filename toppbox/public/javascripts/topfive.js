@@ -23,7 +23,7 @@ module.exports = getData().then(function(response){
   var array = raw.split(';')
 
   array.forEach(function(elem, i){
-    titles.push(array[i].slice(array[i].indexOf('. '), array[i].indexOf('</td><t')));
+    titles.push(array[i].slice(array[i].indexOf('. '), array[i].indexOf('</td><t')).substr(2));
 
   })
   array.forEach(function(elem, i){
@@ -41,6 +41,7 @@ module.exports = getData().then(function(response){
   boxOffice.date = new Date();
   boxOffice.amounts = amounts;
   titles.shift()
+
   boxOffice.titles = titles;
   return boxOffice;
 

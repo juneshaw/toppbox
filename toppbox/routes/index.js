@@ -13,8 +13,6 @@ function Movies(){
   console.log(knex('movies'));
 }
 
-
-
 router.get('/', function(req, res, next) {
       res.render('index')
   })
@@ -66,37 +64,18 @@ router.post('/vote', function(req, res, next){
   var picks = format.formatPicks(req.body);
   db.userByEmail(email).then(function(result) {
     var userId = result[0].id;
-    console.log('result = !!!', result);
     db.insertVote({'user_id': userId,
                   'date': date}).then (function(results) {
-      console.log('insert Vote results', results);
       db.votesByUserDate(userId, date).then(function(results) {
-        console.log('vote id is ', results);
         format.addMovieVotes(picks, results.id);
       })
     })
   })
-  console.log('picks!!!', picks);
-  res.redirect('/')
+  res.redirect('/profileUser/'+email)
 })
 
 router.get('/show', function(req, res, next) {
   res.render('show');
 });
-
-// router.get('/:title', function(req, res, next) {
-//   getupcoming.then(function(data){
-//     data['results'].forEach(function(movie){
-//       var movieName = movie.title.replace(/ /g,'').toLowerCase();
-//       movieName = movieName.replace(/,/g, '');
-//       movieName = movieName.replace(/-/g, '');
-//       console.log(movieName);
-//       if(req.params.title === movieName){
-//         res.render('show', {title: movieName, movie[0]});
-//       }
-//     })
-//   })
-// })
-
 
 module.exports = router;
