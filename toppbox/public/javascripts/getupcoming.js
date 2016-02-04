@@ -6,10 +6,10 @@ var unirest = require('unirest')
 
 function getUpcoming(){
   return new Promise(function(resolve, reject){
-    var postLink = 'http://api.themoviedb.org/3/movie/upcoming?api_key=' + process.env.API_KEY
+    var postLink = 'http://api.themoviedb.org/3/movie/upcoming?api_key=' + process.env.TMDB_API_KEY;
     console.log('postLink = ', postLink);
-    // unirest.post(postLink).end(function(result){
-    unirest.post('http://api.themoviedb.org/3/movie/upcoming?api_key=391a8239c6a23bf8e17a18f22b20f434').end(function(result){
+    unirest.post(postLink).end(function(result){
+    // unirest.post('http://api.themoviedb.org/3/movie/upcoming?api_key=391a8239c6a23bf8e17a18f22b20f434').end(function(result){
       console.log(result.status);
       if(result.status != 200){
         console.log('error retreiving data');
