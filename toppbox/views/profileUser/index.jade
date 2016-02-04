@@ -13,8 +13,9 @@ block content
 
     div.box-3-4
       for movieVote in movieVotes
-        li #{movieVote.name}
-          img(src=#{movieVote.})
-          p #{movieVote.comment}
+        ol
+          li #{movieVote.name}
+            img.movieImgs(src='http://image.tmdb.org/t/p/w500'+ movieVote.photo_link height='400px' width='200px')
+            p #{movieVote.comment}
 
   div.bottom

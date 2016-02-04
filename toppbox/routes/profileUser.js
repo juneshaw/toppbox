@@ -12,30 +12,36 @@ router.get('/:email', function(req, res, next) {
   // var originalUrl = localStorage.getItem('photo');
   // var email = localStorage.getItem('email').replace(/['"]+/g, '');
   // var url = originalUrl.replace(/['"]+/g, '');
-  var movieArray = [];
-  var movieVotes = [];
   db.userByEmail(req.params.email).first().then(function(user) {
     console.log('user = ', user);
     var date = new Date();
     db.votesByUserDate(user.id, date).then(function(vote) {
-      console.log('vote = ', vote);
-      if (vote) {
+      if (!vote) {
+        res.render('profileUser/index',
+                  {'user': user,
+                'movies': []})
+      } else {
         db.voteMovies(vote.id).then(function(movieVotes) {
-          console.log('vote movieVotes = ', movieVotes);
-          movieVotes.forEach(function(movieVote) {
-            console.log('movieVote', movieVote);
-            db.movie(movieVote.movie_id).then(function(movie) {
-              movieArray.push(movie);
-            })
-          })
+          console.log('********movieVotes = ', movieVotes);
+          // var movies = [];
+          // var length = movieVotes.length;
+          // movieVotes.forEach(function(movieVote, index) {
+          //   db.movie(movieVote.movie_id).first().then(function(movie) {
+          //     movies.push({'movie': movie,
+          //                     'movieVote': movieVote[index]});
+          //     if (index >= length - 1) {
+          //       console.log('movies!!!', movies);
+          res.render('profileUser/index',
+          {'user': user,
+          'movieVotes': movieVotes})
         })
       }
     })
   })
-  res.render('profileUser/index',
-    {'user': user,
-    'movieVotes': movieVotes,
-    'movieArray': movieArray});
+  // res.render('profileUser/index',
+  //   {'user': user,
+  //   'movieVotes': movieVotes,
+  //   'movieArray': movieArray});
 })
 
 
