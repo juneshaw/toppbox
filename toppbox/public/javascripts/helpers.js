@@ -14,7 +14,6 @@ module.exports = {
   },
 
   addMovieVotes: function(picks, vote_id) {
-    var movieVotes = [];
     picks.forEach(function(movie, index) {
       db.movieByTitle(movie).then(function(title) {
         var movieVote = {'vote_id': vote_id,

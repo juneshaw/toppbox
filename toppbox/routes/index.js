@@ -59,7 +59,6 @@ router.post('/vote', function(req, res, next){
   var picks = format.formatPicks(req.body);
   db.userByEmail(email).then(function(result) {
     var userId = result[0].id;
-    console.log('result = !!!', result);
     db.insertVote({'user_id': userId,
                   'date': date}).then (function(results) {
       console.log('insert Vote results', results);
@@ -70,7 +69,7 @@ router.post('/vote', function(req, res, next){
     })
   })
   console.log('picks!!!', picks);
-  res.redirect('/')
+  res.redirect('/profileUser/'+email)
 })
 
 router.get('/show', function(req, res, next) {

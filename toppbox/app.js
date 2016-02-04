@@ -23,8 +23,8 @@ var buildDB = require('./routes/buildDB');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var facebook = require('./routes/facebook');
-var profileUser = require('./routes/profileUser');
 var buildDB = require('./routes/buildDB');
+var profileUser = require('./routes/profileUser');
 
 var app = express();
 
@@ -45,11 +45,11 @@ app.use( express.static( "public" ) );
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/buildDB', buildDB);
 app.use('/', routes);
 app.use('/users', users);
 app.use('/', facebook);
 app.use('/profileUser', profileUser);
-app.use('/buildDB', buildDB);
 
 passport.use(new FacebookStrategy({
     clientID: "1643675802563018",
