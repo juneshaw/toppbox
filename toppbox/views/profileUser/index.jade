@@ -2,20 +2,19 @@ include ../layout
 
 block content
 
-  link(rel='stylesheet', href='/stylesheets/profile.css')
+link(rel='stylesheet', href='/stylesheets/profile.css')
 
-  div.grid
-    div.box-1-4
-      div.bio
-        img(src="#{user.photo_link}")
-        p #{user.bio}
-        div#edit Edit Profile
-
-    div.box-3-4
-      for movieVote in movieVotes
-        ol
-          li #{movieVote.name}
-            img.movieImgs(src='http://image.tmdb.org/t/p/w500'+ movieVote.photo_link height='400px' width='200px')
-            p #{movieVote.comment}
+div.grid
+  div.box-1-4
+    div.bio
+      img(src="#{user.photo_link}")
+      p #{user.bio}
+      div#edit Edit Profile
 
   div.bottom
+    h4 My Picks for #{date}
+    each movieVote, index in movieVotes
+        div.moviePick
+          h4 #{index} : #{movieVote.name}
+          img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='200px')
+          p #{movieVote.comment}

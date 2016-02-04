@@ -8,32 +8,35 @@ var localStorage = require('localStorage');
 var format = require('../public/javascripts/helpers')
 
 router.get('/:email', function(req, res, next) {
-  // var userName = localStorage.getItem('name').replace(/['"]+/g, '');
-  // var originalUrl = localStorage.getItem('photo');
-  // var email = localStorage.getItem('email').replace(/['"]+/g, '');
-  // var url = originalUrl.replace(/['"]+/g, '');
+  var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
+  var originalUrl = localStorage.getItem('photo');
+  var userName = localStorage.getItem('name').replace(/['"]+/g, '');
+  var email = localStorage.getItem('email').replace(/['"]+/g, '');
+  var url = originalUrl.replace(/['"]+/g, '');
+
   db.userByEmail(req.params.email).first().then(function(user) {
     console.log('user = ', user);
     var date = new Date();
     db.votesByUserDate(user.id, date).then(function(vote) {
       if (!vote) {
         res.render('profileUser/index',
-                  {'user': user,
-                'movies': []})
+                  {'userName': usersName,
+                  'user': user,
+                  'date': date,
+                  'movieVotes': [],
+                  'photoUrl': url,
+                  'toppboxemail':email})
       } else {
         db.voteMovies(vote.id).then(function(movieVotes) {
           console.log('********movieVotes = ', movieVotes);
-          // var movies = [];
-          // var length = movieVotes.length;
-          // movieVotes.forEach(function(movieVote, index) {
-          //   db.movie(movieVote.movie_id).first().then(function(movie) {
-          //     movies.push({'movie': movie,
-          //                     'movieVote': movieVote[index]});
-          //     if (index >= length - 1) {
-          //       console.log('movies!!!', movies);
           res.render('profileUser/index',
-          {'user': user,
-          'movieVotes': movieVotes})
+          {'userName': usersName,
+          'user': user,
+          'date': date,
+          'movieVotes': movieVotes,
+          'photoUrl': url,
+          'toppboxemail':email})
+
         })
       }
     })
