@@ -45,6 +45,11 @@ function updateUser(id, user) {
   return(Users().where('id', id).update(user));
 }
 
+function updateUserScore(id, score){
+  console.log('score', score, 'id', id);
+  return(Users().where('id', id).update({'total_score': score}))
+}
+
 function deleteUser(id) {
   return(Users().where('id', id).del())
   }
@@ -161,6 +166,10 @@ function movieTitles(movieIds) {
 function movieByTitle(name) {
  return(Movies().where('name', name).first())
 }
+
+function scoresByDate(date) {
+  return(Scores().where('date', date))
+}
 // function moviesByUserVote(email, date) {
 //   return(Movies).
 // }
@@ -202,5 +211,7 @@ movieByTitle: movieByTitle,
 votesByUserDate: votesByUserDate,
 voteMovies: voteMovies,
 movieTitles: movieTitles,
-movieVotesByUserDate: movieVotesByUserDate
+movieVotesByUserDate: movieVotesByUserDate,
+scoresByDate:scoresByDate,
+updateUserScore:updateUserScore
 }

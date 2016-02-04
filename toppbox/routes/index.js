@@ -7,6 +7,7 @@ var format = require('../public/javascripts/helpers')
 var knex = require('../db/knex');
 var db = require('../src/db')
 var localStorage = require('localStorage');
+var score = require('../public/javascripts/score')
 
 function Movies(){
   return knex('movies');
@@ -68,6 +69,7 @@ router.post('/vote', function(req, res, next){
                   'date': date}).then (function(results) {
       db.votesByUserDate(userId, date).then(function(results) {
         format.addMovieVotes(picks, results.id);
+        score(userId, date);
       })
     })
   })
