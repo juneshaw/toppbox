@@ -24,7 +24,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var facebook = require('./routes/facebook');
 
-
 var app = express();
 
 // view engine setup

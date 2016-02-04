@@ -14,8 +14,6 @@ function Movies(){
   console.log(knex('movies'));
 }
 
-
-
 router.get('/', function(req, res, next) {
       res.render('index')
   })
@@ -49,20 +47,15 @@ router.post('/vote', function(req, res, next){
   var picks = format.formatPicks(req.body);
   db.userByEmail(email).then(function(result) {
     var userId = result[0].id;
-    console.log('result = !!!', result);
     db.insertVote({'user_id': userId,
                   'date': date}).then (function(results) {
-      console.log('insert Vote results', results);
       db.votesByUserDate(userId, date).then(function(results) {
-        console.log('vote id is ', results);
         format.addMovieVotes(picks, results.id);
       })
     })
   })
-  console.log('picks!!!', picks);
-  res.redirect('/')
+  res.redirect('/profileUser/'+email)
 })
-
 
 router.get('/:title', function(req, res, next) {
   console.log(req.params);
@@ -74,7 +67,11 @@ router.get('/:title', function(req, res, next) {
   db.movieByTitle(req.params.title).then(function(results){
     console.log("calling!")
     res.render('show', {data: results,  photoUrl: url, userName: usersName, toppboxemail:email});
-  })
+router.get('/show', function(req, res, next) {
+  res.render('show');
+});
+
+
 })
 
 
