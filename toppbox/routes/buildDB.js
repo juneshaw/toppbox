@@ -22,10 +22,7 @@ router.get('/', function(req, res, next) {
     })
     topfive.then(function(results) {
       results.titles.forEach(function(titles, index){
-        console.log('titles', titles);
         db.movieByTitle(titles).then(function(result){
-          console.log('titles', titles);
-          console.log('result', result);
           rank = {
             'date':new Date(),
             'rank': index,

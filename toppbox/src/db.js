@@ -34,7 +34,6 @@ function Scores() {
 }
 
 function insertUser(user) {
-  console.log('in insertUser', user);
   return(Users().insert(user));
 }
 
@@ -100,7 +99,6 @@ function deleteRanking(id) {
 }
 
 function insertMovieVote(movie_vote) {
-  console.log('movieVote = ',movie_vote);
   return(MovieVotes().insert(movie_vote));
 }
 
@@ -141,7 +139,6 @@ function userByEmail(email) {
 }
 
 function movieByTitle(title) {
-  console.log('in movieByTitle')
   return(Movies().where('name', title).first())
 }
 

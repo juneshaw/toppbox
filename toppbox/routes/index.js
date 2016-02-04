@@ -6,14 +6,7 @@ var getupcoming = require('../public/javascripts/getupcoming')
 var format = require('../public/javascripts/helpers')
 var knex = require('../db/knex');
 var db = require('../src/db')
-
-function Movies(){
-  return knex('movies');
-  console.log(knex('movies'));
-}
-
 var localStorage = require('localStorage');
-
 
 router.get('/', function(req, res, next) {
       res.render('index')
@@ -61,14 +54,11 @@ router.post('/vote', function(req, res, next){
     var userId = result[0].id;
     db.insertVote({'user_id': userId,
                   'date': date}).then (function(results) {
-      console.log('insert Vote results', results);
       db.votesByUserDate(userId, date).then(function(results) {
-        console.log('vote id is ', results);
         format.addMovieVotes(picks, results.id);
       })
     })
   })
-  console.log('picks!!!', picks);
   res.redirect('/profileUser/'+email)
 })
 
@@ -76,24 +66,8 @@ router.get('/show', function(req, res, next) {
   res.render('show');
 });
 
-// router.get('/:title', function(req, res, next) {
-//   getupcoming.then(function(data){
-//     data['results'].forEach(function(movie){
-//       var movieName = movie.title.replace(/ /g,'').toLowerCase();
-//       movieName = movieName.replace(/,/g, '');
-//       movieName = movieName.replace(/-/g, '');
-//       console.log(movieName);
-//       if(req.params.title === movieName){
-//         res.render('show', {title: movieName, movie[0]});
-//       }
-//     })
-//   })
-// })
-
 router.get('/:title', function(req, res, next) {
-  console.log(req.params);
   db.movieByTitle(req.params.title).then(function(results){
-    console.log("calling!")
     res.render('show', {data: results});
   })
 })
