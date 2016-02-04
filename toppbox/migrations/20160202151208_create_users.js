@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('email');
     table.string('passwordHash')
     table.string('photo_link');
+    table.string('bio')
     table.integer('total_score');
   })
 };

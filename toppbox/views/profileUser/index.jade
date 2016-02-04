@@ -5,12 +5,16 @@ block content
   link(rel='stylesheet', href='/stylesheets/profile.css')
 
   div.grid
-    div.box
+    div.box-1-4
+      div.bio
+        img(src="#{user.photo_link}")
+        p #{user.bio}
+        div#edit Edit Profile
 
-      img(src="#{user.photo_link}")
-    div.box
+    div.box-3-4
       for movieVote in movieVotes
         li #{movieVote.name}
+          img(src=#{movieVote.})
           p #{movieVote.comment}
-    div.box
-    div.box
+
+  div.bottom
