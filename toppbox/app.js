@@ -51,17 +51,25 @@ app.use('/', facebook);
 app.use('/profileUser', profileUser);
 app.use('/buildDB', buildDB);
 
-
 passport.use(new FacebookStrategy({
     clientID: "1643675802563018",
     clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
-    callbackURL: process.env.FACEBOOK_CALLBACK || "localhost:3000/auth/facebook",
-
-    // callbackURL: "https://toppbox-dev.herokuapp.com/auth/facebook/" || "localhost:3000/auth/facebook",
-    // callbackURL: "https://toppbox-dev.herokuapp.com/auth/facebook",
+    callbackURL: "http://localhost:3000/auth/facebook/",
     enableProof: true,
-    profileFields: ['name', 'id','picture.type(large)', 'emails']
+    profileFields: ['name', 'id', 'photos', 'emails']
   },
+//
+// passport.use(new FacebookStrategy({
+//     clientID: "1643675802563018",
+//     clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
+//     callbackURL: "localhost:3000/auth/facebook/",
+    // callbackURL: "https://toppbox-dev.herokuapp.com/auth/facebook/",
+    // callbackURL: process.env.FACEBOOK_CALLBACK || "localhost:3000/auth/facebook/",
+
+    // callbackURL: "https://toppbox-dev.herokuapp.com/auth/facebook/" || "localhost:3000/auth/facebook/",
+    // enableProof: true,
+    // profileFields: ['name', 'id','picture.type(large)', 'emails']
+  // },
   function(token, refreshToken, profile, done) {
     console.log("Auth done");
     done(null, profile);
