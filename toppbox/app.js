@@ -6,6 +6,8 @@ var localStorage = require('localStorage');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require ('./src/db.js');
+require('dotenv').load();
+
 
 
 // var dragula = require('dragula');
