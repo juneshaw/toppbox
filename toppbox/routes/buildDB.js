@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
         db.movieByTitle(titles).then(function(result){
           rank = {
             'date':new Date(),
-            'rank': index,
+            'rank': index+1,
             'total_earnings': 0,
             'movie_id': result.id};
             db.insertScore(rank).then(function(result){
