@@ -58,6 +58,7 @@ router.post('/vote', function(req, res, next){
   var email = localStorage.getItem('email').replace(/['"]+/g, '');
   var picks = format.formatPicks(req.body);
   db.userByEmail(email).then(function(result) {
+    console.log('***** userByEmail results', result);
     var userId = result[0].id;
     db.insertVote({'user_id': userId,
                   'date': date}).then (function(results) {
