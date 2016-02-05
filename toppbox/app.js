@@ -76,7 +76,9 @@ passport.serializeUser(function(user, done) {
       var last_name = user['_json']['last_name']
       var photo_link = user["_json"]["picture"]["data"]["url"]
         db.userByEmail(email).then(function(result) {
+          console.log('******** userByEmail result: ', result);
           if (!result) {
+            console.log('***** inserting user ****');
             db.insertUser({'email': email,
                           'first_name': first_name,
                           'last_name': last_name,
