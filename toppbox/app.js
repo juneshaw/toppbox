@@ -75,14 +75,18 @@ passport.serializeUser(function(user, done) {
       var first_name = user["_json"]["first_name"]
       var last_name = user['_json']['last_name']
       var photo_link = user["_json"]["picture"]["data"]["url"]
-        db.insertUser({'email': email,
-                      'first_name': first_name,
-                      'last_name': last_name,
-                       'photo_link': photo_link,
-                       'total_score': 0
-                    }).then (function(results, error) {
-                      console.log('results', results, 'error', error);
+        db.userByEmail(email).then(function(result) {
+          if (!result) {
+            db.insertUser({'email': email,
+                          'first_name': first_name,
+                          'last_name': last_name,
+                           'photo_link': photo_link,
+                           'total_score': 0
+                        }).then (function(results, error) {
+                          console.log('results', results, 'error', error);
                     })
+                  }
+                })
 
     var retrievedObject = localStorage;
     console.log(user["_json"]["picture"]["data"]["url"]);
