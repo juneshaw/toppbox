@@ -8,8 +8,7 @@
     router.get('/auth/facebook', passport.authenticate('facebook', {successRedirect: '/auth/home', scope : 'email'}));
 
     router.get('/auth/home/', function(req, res){
-      var movies= []
-      //req.query.option would equal 'my-cool-option'
+      var movies= [];
       var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
       var originalUrl = localStorage.getItem('photo');
       var email = localStorage.getItem('email').replace(/['"]+/g, '');
@@ -17,8 +16,10 @@
 
       getupcoming.then(function(data){
         data['results'].forEach(function(movie){
-          if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
-            movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+          if(movie.original_language === "en"){
+            if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
+              movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+            }
           }
         });
         res.render("logged-in/index", {movies:movies, photoUrl: url, userName: usersName, toppboxemail:email});
@@ -27,17 +28,17 @@
 
   router.get('/home/home', function(req, res){
     var movies= []
-    //req.query.option would equal 'my-cool-option'
     var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
     var originalUrl = localStorage.getItem('photo');
     var email = localStorage.getItem('email').replace(/['"]+/g, '');
     var url = originalUrl.replace(/['"]+/g, '');
 
     getupcoming.then(function(data){
-      console.log(data);
       data['results'].forEach(function(movie){
-        if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
-          movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+        if(movie.original_language === "en"){
+          if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
+            movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+          }
         }
       });
     res.render("logged-in/index", {movies:movies, photoUrl: url, userName: usersName, toppboxemail:email});
@@ -68,6 +69,11 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them to the home page
     res.redirect('/');
+}
+
+function fixTitle(title){
+  var letters = title.replace(/[aeiou]/ig,'').replace(" ", "").split("");
+  return letters.slice(0,3).join("");
 }
 
 module.exports = router;
