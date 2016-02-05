@@ -56,7 +56,7 @@ passport.use(new FacebookStrategy({
     clientSecret: "73c625d213a3ef1ae03eb404c7cd1609",
     callbackURL: process.env.FACEBOOK_CALLBACK || "http://localhost:3000/auth/facebook/",
     enableProof: true,
-    profileFields: ['name', 'id', 'photos', 'emails']
+    profileFields: ['name', 'id', 'picture.type(large)', 'emails']
   },
 
   function(token, refreshToken, profile, done) {
