@@ -23,16 +23,6 @@ overflow-x: hidden;
 	left: 45%;
 	width: 10%;
 }
-.nav-bar{
-	position: fixed;
-	display: block;
-	height: 10%;
-	width: 100%;
-	background-color: black;
-	top: 0%;
-	left: 0%;
-	z-index: 5;
-}
 .navLeft{
   position: relative;
   top: 35%;
