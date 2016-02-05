@@ -72,7 +72,7 @@ router.post('/vote', function(req, res, next){
 })
 
 router.get('/:title', function(req, res, next) {
-  console.log(req.params);
+  console.log('**** in show page', req.params.title);
   var movies= []
   var usersName = localStorage.getItem('name').replace(/['"]+/g, '');
   var originalUrl = localStorage.getItem('photo');

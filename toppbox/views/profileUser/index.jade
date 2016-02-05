@@ -16,6 +16,7 @@ div.grid
   div.bottom
     h4 My Picks for #{date}
     each movieVote, index in movieVotes
+      a(href="../show/#{movieVote.id}")
         div.moviePick
           h4 #{index} : #{movieVote.name}
           h4 Popularity: #{movieVote.popularity}

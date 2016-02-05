@@ -14,10 +14,8 @@ module.exports = {
   },
 
   addMovieVotes: function(picks, vote_id) {
-    console.log('***** picks!', picks);
     picks.forEach(function(movie, index) {
       db.movieByTitle(movie).then(function(title) {
-        console.log('********inserting vote:', vote_id, title.id);
         var movieVote = {'vote_id': vote_id,
                         'movie_id': title.id,
                         'rank': index+1,
