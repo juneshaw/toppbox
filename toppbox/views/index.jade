@@ -6,7 +6,7 @@ block content
       img.logo(src="images/Logo.png", alt="Logo")
   div.holder
     div.shadow
-    
+
     div.left
       h1.sign-in.jura SIGN IN
       form(action="/" method="POST")
@@ -32,7 +32,7 @@ block content
       img.about-compete.about-sec(src="images/compete.png", alt="Logo")
       img.about-picks.about-sec(src="images/Picks.png", alt="Logo")
 
-    script(type='text/javascript').      
+    script(type='text/javascript').
         if (window.location.hash && window.location.hash == '#_=_') {
           window.location.hash = '';
         }
@@ -41,7 +41,7 @@ block content
           $(document).ready(function(){
             $('html, body').animate({
             scrollTop: $(".about-div").offset().top - 400,
-            scrollLeft: $(".shadow").offset().left
-            }, 2000);
+            scrollLeft: $(".shadow").offset().left,
+          }, 280);
           })
         }

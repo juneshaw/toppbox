@@ -37,6 +37,7 @@ color: #ED4600;
 	width: 175px;
 	height: 175px;
   border: 2px solid #e9c291;
+	border-radius: 50%;
 }
 .users-name{
   color: white;
