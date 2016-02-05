@@ -23,7 +23,7 @@ module.exports = {
                         'rank': index+1,
                       'comment': 'my fave movie ever'}
         db.insertMovieVote(movieVote).then(function(results) {
-          console.log('!!!!!!!insert results', results');
+          console.log('!!!!!!!insert results', results);
         });
       })
     })
