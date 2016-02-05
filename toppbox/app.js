@@ -26,6 +26,7 @@ var facebook = require('./routes/facebook');
 
 var app = express();
 
+console.log('*****', process.env.NODE_ENV);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -74,14 +75,20 @@ passport.serializeUser(function(user, done) {
       var first_name = user["_json"]["first_name"]
       var last_name = user['_json']['last_name']
       var photo_link = user["_json"]["picture"]["data"]["url"]
-        db.insertUser({'email': email,
-                      'first_name': first_name,
-                      'last_name': last_name,
-                       'photo_link': photo_link,
-                       'total_score': 0
-                    }).then (function(results, error) {
-                      console.log('results', results, 'error', error);
+        db.userByEmail(email).first().then(function(result) {
+          console.log('******** userByEmail result: ', result);
+          if (!result) {
+            console.log('***** inserting user ****');
+            db.insertUser({'email': email,
+                          'first_name': first_name,
+                          'last_name': last_name,
+                           'photo_link': photo_link,
+                           'total_score': 0
+                        }).then (function(results, error) {
+                          console.log('results', results, 'error', error);
                     })
+                  }
+                })
 
     var retrievedObject = localStorage;
     console.log(user["_json"]["picture"]["data"]["url"]);

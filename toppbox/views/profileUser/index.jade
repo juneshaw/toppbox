@@ -10,6 +10,7 @@ div.user-info
 div.user-picks  
   div.indiv-picks
     each movieVote, index in movieVotes
-      div.moviePick
-            h4.movie-title #{index} : #{movieVote.name}
-            img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='150px')
+      a(href="show/#{movieVote.name}")
+        div.moviePick
+          h4.movie-title #{index} : #{movieVote.name}
+          img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='150px')
