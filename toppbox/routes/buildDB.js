@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
       var insertMovie = {'name': movie.title,
                   'photo_link': movie.poster_path,
                   'overview': movie.overview,
-                  'popularity': movie.popularity}
+                  'popularity': movie.popularity,
+                  'original_language': movie.original_language}
       db.insertMovie(insertMovie).then(function(results) {
       })
     })

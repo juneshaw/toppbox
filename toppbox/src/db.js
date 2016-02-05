@@ -4,6 +4,7 @@
 //   client:'pg',
 //   connection: 'postgres://localhost/toppbox'
 // });
+
 var knex = require('../db/knex')
 
 function Users() {

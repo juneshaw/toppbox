@@ -21,11 +21,20 @@ router.get('/vote', function(req, res, next) {
   var originalUrl = localStorage.getItem('photo');
   var email = localStorage.getItem('email').replace(/['"]+/g, '');
   var url = originalUrl.replace(/['"]+/g, '');
-  getupcoming.then(function(data){
-    data['results'].forEach(function(movie){
+
+  db.Movies().select().then(function(data) {
+    console.log('movie results', data);
+
+
+  // })
+  //
+  // getupcoming.then(function(data){
+
+
+    data.forEach(function(movie){
       if(movie.original_language === "en"){
-        if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
-          movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
+        if(movie.photo_link !== null && movie.photo_link !== "" && movie.photo_link !== "null"){
+          movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.photo_link, title: movie.name})
         }
       };
     })
