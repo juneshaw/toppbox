@@ -9,16 +9,7 @@ var db = require('../src/db');
 var localStorage = require('localStorage');
 var passport = require('passport');
 
-function Movies(){
-  return knex('movies');
-}
-
 var score = require('../public/javascripts/score')
-
-function Movies(){
-  return knex('movies');
-  console.log(knex('movies'));
-}
 
 router.get('/', function(req, res, next) {
       res.render('index')
@@ -36,10 +27,10 @@ router.get('/vote', function(req, res, next) {
         if(movie.poster_path !== null && movie.poster_path !== "" && movie.poster_path !== "null"){
           movies.push( {image:'https://image.tmdb.org/t/p/w185'+movie.poster_path, title: movie.title})
         }
-    };
+      };
+    })
     res.render('vote', {movies: movies, photoUrl: url, userName: usersName, toppboxemail:email})
-  })
-});
+  });
 });
 
 //need to add id to render the right page

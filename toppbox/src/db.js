@@ -4,10 +4,7 @@
 //   client:'pg',
 //   connection: 'postgres://localhost/toppbox'
 // });
-var knex = require ('knex')({
-  client:'pg',
-  connection: 'postgres://localhost/toppbox'
-});
+var knex = require('../db/knex')
 
 function Users() {
   return knex('users');
