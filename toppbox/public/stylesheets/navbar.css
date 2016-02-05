@@ -18,6 +18,7 @@
 }
 .nav-bar a{
 	text-decoration: none;
+	cursor: default;
 }
 .navLeft{
   position: relative;
