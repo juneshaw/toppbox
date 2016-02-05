@@ -26,6 +26,7 @@ var facebook = require('./routes/facebook');
 
 var app = express();
 
+console.log('*****', process.env.NODE_ENV);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
