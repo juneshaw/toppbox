@@ -12,6 +12,7 @@ module.exports = function score (user_id, date) {
               if (vote.movie_id === score.movie_id && vote.rank === score.rank) {
                 scoreTotal++;
               }
+
             })
           })
           db.updateUserScore(user_id, scoreTotal).then(function(results) {
