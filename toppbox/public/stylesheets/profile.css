@@ -74,7 +74,7 @@ color: #ED4600;
   color: white;
 }
 .moviePick{
-  width: 250px;
+  width: 18%;
   height: 375px;
   margin: 5px;
   display: inline-block;
@@ -82,6 +82,6 @@ color: #ED4600;
 
 .moviePick img{
   float: left;
-  width: 250px;
-  height: 357px;
+  width: 95%;
+  height: auto;
 }
