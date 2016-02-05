@@ -3,22 +3,13 @@ include ../layout
 block content
 
 link(rel='stylesheet', href='/stylesheets/profile.css')
-
-div.grid
-  div.box-1-4
-    div.bio
-      img(src="#{user.photo_link}")
-      p #{user.bio}
-      div#edit Edit Profile
-  div.box-1-4
-    h1 Total Score: #{user.total_score}
-
-  div.bottom
-    h4 My Picks for #{date}
+div.user-info
+  img.big-image(src="#{user.photo_link}")
+  p.users-name.user-info-text= user.first_name + " " + user.last_name 
+  p.users-score.user-info-text= "score: " + user.total_score
+div.user-picks  
+  div.indiv-picks
     each movieVote, index in movieVotes
-        div.moviePick
-          h4 #{index} : #{movieVote.name}
-          h4 Popularity: #{movieVote.popularity}
-          img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='150px')
-          h5 Comments:
-          p #{movieVote.comment}
+      div.moviePick
+            h4.movie-title #{index} : #{movieVote.name}
+            img.movieImgs(src='http://image.tmdb.org/t/p/w185'+ movieVote.photo_link height='400px' width='150px')
